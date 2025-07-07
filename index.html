@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Masterclass: Guia Interativo de Fitness</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter for general text -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex-grow: 1;
+            width: 100%; /* Ensure container takes full width on smaller screens */
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #1e3a8a; /* Dark blue header */
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative; /* For the "Created by" text positioning */
+        }
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: -0.05em; /* Slightly tighter letter spacing for impact */
+        }
+        .header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 5px;
+        }
+        .header .author-info {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #bfdbfe; /* Lighter blue for author info */
+            margin-top: 15px;
+        }
+
+        /* Card Styles (General Content Blocks) */
+        .card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align content to start */
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Category Title Styles */
+        .category-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e3a8a; /* Darker blue for titles */
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+            width: 100%; /* Ensure it spans full width */
+        }
+        .category-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #3b82f6; /* Blue underline */
+            border-radius: 2px;
+        }
+
+        /* Item Title Styles */
+        .item-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937; /* Dark gray */
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping for buttons on smaller screens */
+            margin-bottom: 10px;
+            width: 100%; /* Ensure it takes full width */
+        }
+        .item-title .emoji {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        /* Description Text Styles */
+        .description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #4b5563; /* Medium gray */
+            margin-bottom: 10px; /* Space between paragraphs */
+        }
+        .description strong {
+            color: #1e3a8a; /* Darker blue for strong text */
+        }
+
+        /* Button Styles */
+        .play-audio-btn, .gemini-info-btn, .mark-learned-btn, .record-btn {
+            background-color: #3b82f6; /* Blue button */
+            color: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center; /* Center content in button */
+            margin-left: 10px;
+            margin-top: 5px; /* Add some top margin for wrapping */
+            white-space: nowrap; /* Prevent text from wrapping inside button */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-width: 90px; /* Ensure minimum width for consistency */
+        }
+        .play-audio-btn:hover, .gemini-info-btn:hover, .mark-learned-btn:hover, .record-btn:hover {
+            background-color: #2563eb; /* Darker blue on hover */
+            transform: translateY(-1px);
+        }
+        .play-audio-btn:active, .gemini-info-btn:active, .mark-learned-btn:active, .record-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .play-audio-btn svg {
+            margin-right: 5px;
+        }
+
+        /* Search Bar Styles */
+        .search-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e0f2fe;
+            border-radius: 10px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .search-container input {
+            padding: 10px 15px;
+            border: 2px solid #90cdf4;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .search-container input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Section Separator */
+        .section-separator {
+            height: 2px;
+            background-color: #d1d5db; /* Light gray separator */
+            margin: 60px 0;
+            border-radius: 1px;
+        }
+
+        /* Detailed Info & Loading Spinner */
+        .detailed-info {
+            background-color: #e0f2fe; /* Lighter blue background for detailed info */
+            border-left: 5px solid #3b82f6; /* Blue left border */
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #1e40af; /* Darker blue text */
+        }
+        .loading-spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Pronunciation Practice & Status Messages */
+        .pronunciation-practice {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #90cdf4;
+        }
+        .pronunciation-practice h4 {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1e3a8a;
+        }
+        .record-controls button {
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .status-message {
+            margin-top: 10px;
+            font-style: italic;
+            color: #4b5563;
+        }
+
+        /* "Mark as Learned" Button */
+        .mark-learned-btn.learned {
+            background-color: #10b981; /* Green when learned */
+            box-shadow: 0 4px 6px rgba(16, 185, 129, 0.3);
+        }
+        .mark-learned-btn.learned:hover {
+            background-color: #059669;
+        }
+
+        /* Info Box Styles */
+        .info-box {
+            background-color: #dbeafe; /* Lightest blue */
+            border-left: 4px solid #60a5fa; /* Medium blue border */
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            color: #1e40af;
+        }
+        .info-box h3 {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1e3a8a;
+        }
+        .info-box ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+        .info-box li {
+            margin-bottom: 5px;
+        }
+
+        /* Human Body Activity Styles */
+        .body-outline-svg {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            background-color: #e0f2fe;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .body-outline-svg path, .body-outline-svg rect, .body-outline-svg circle {
+            fill: #a7d9f7; /* Light blue for body parts */
+            stroke: #1e3a8a; /* Dark blue outline */
+            stroke-width: 1;
+            cursor: pointer;
+            transition: fill 0.2s ease-in-out, stroke-width 0.2s ease-in-out;
+        }
+        .body-outline-svg path:hover, .body-outline-svg rect:hover, .body-outline-svg circle:hover {
+            fill: #60a5fa; /* Medium blue on hover */
+        }
+        .body-outline-svg path.selected, .body-outline-svg rect.selected, .body-outline-svg circle.selected {
+            fill: #3b82f6; /* Bright blue when selected */
+            stroke: #1e3a8a;
+            stroke-width: 2;
+        }
+        .body-outline-svg path.highlight, .body-outline-svg rect.highlight, .body-outline-svg circle.highlight {
+            animation: pulse-highlight 1.5s infinite alternate;
+        }
+        @keyframes pulse-highlight {
+            0% { fill: #facc15; } /* Yellow */
+            100% { fill: #f97316; } /* Orange */
+        }
+
+        /* Info Panel for Activity */
+        .info-panel {
+            background-color: #e0f2fe;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            background-color: #3b82f6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn:hover {
+            background-color: #2563eb;
+            transform: translateY(-1px);
+        }
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .btn:disabled {
+            background-color: #90cdf4;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        /* Input Group Styles */
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #90cdf4;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .input-group input:focus, .input-group select:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Feedback Message Styles */
+        .feedback-message {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        .feedback-correct {
+            color: #10b981; /* Green */
+        }
+        .feedback-incorrect {
+            color: #ef4444; /* Red */
+        }
+
+        /* Detailed AI Info */
+        .detailed-ai-info {
+            background-color: #dbeafe;
+            border-left: 4px solid #60a5fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #1e40af;
+        }
+
+        /* How to Play Section */
+        .how-to-play {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 25px;
+            position: relative; /* For close button positioning */
+        }
+        .how-to-play h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+        .how-to-play ol {
+            list-style: decimal;
+            margin-left: 20px;
+        }
+        .how-to-play li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: #4b5563;
+        }
+        .how-to-play .close-btn {
+            background-color: #ef4444;
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            line-height: 1;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.2s ease-in-out;
+        }
+        .how-to-play .close-btn:hover {
+            background-color: #dc2626;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .footer p {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .category-title {
+                font-size: 2rem;
+            }
+            .item-title {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .play-audio-btn, .gemini-info-btn, .mark-learned-btn, .record-btn {
+                margin-left: 0;
+                width: 100%;
+                margin-top: 10px;
+            }
+            .info-panel .btn {
+                width: 100%;
+            }
+            .flex-wrap.gap-2 button {
+                flex-basis: 100%; /* Make buttons take full width on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>🏋️‍♀️ Gym Masterclass 🥇</h1>
+            <p>Seu Guia Definitivo para Exercícios, Máquinas e Esportes pelo Mundo!</p>
+            <p>🌍 Índia | Inglaterra | EUA | Brasil | Argentina | Europa | Austrália | Tailândia | África 🌍</p>
+            <p class="author-info">Criado por Daby @2025</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Introduction from the Administrator/Trainer -->
+        <div class="card text-center mb-10">
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Bem-vindo(a), Futuro(a) Entusiasta do Fitness! 👋</h2>
+            <p class="description mb-4">
+                Como seu dedicado Administrador de Academia, Personal Trainer e Instrutor, estou empolgado para guiá-lo(a) por esta masterclass abrangente. Cansado(a) de ir à academia sem um plano ou de se sentir inseguro(a) se seus esforços estão realmente valendo a pena? Esta é a sua solução!
+            </p>
+            <p class="description">
+                Compilamos informações essenciais sobre vários exercícios, máquinas de ponta e emocionantes disciplinas esportivas que você encontrará nas melhores academias do mundo. Seja você um iniciante em busca de um caminho claro ou um atleta experiente que visa maximizar seu potencial, este recurso foi projetado para aprimorar seu conhecimento e impulsionar sua jornada de fitness. Vamos mergulhar e **tornar você o(a) seu(sua) maior e mais forte versão**! 💪
+            </p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container mb-10">
+            <label for="searchInput" class="sr-only">Pesquisar exercícios, máquinas ou esportes</label>
+            <input type="text" id="searchInput" placeholder="🔍 Pesquisar um item..." onkeyup="filterCards()">
+        </div>
+
+        <!-- Personalized Journey Section -->
+        <section id="personalized-journey-section" class="mb-10">
+            <h2 class="category-title">✨ Sua Jornada Personalizada ✨</h2>
+            <div class="card text-center">
+                <p class="description mb-4">
+                    Assim como um programa de treino eficaz se adapta ao seu progresso, sua jornada de aprendizado aqui também é personalizada. Acompanhe seu conhecimento, receba feedback e explore caminhos que se alinham aos seus objetivos.
+                </p>
+                <p class="description">
+                    Em breve, você poderá rastrear seu progresso, desbloquear conquistas e ver sua evolução em tempo real, transformando o aprendizado em uma experiência contínua e recompensadora!
+                </p>
+            </div>
+        </section>
+
+        <!-- Masterclass Community Section -->
+        <section id="masterclass-community-section" class="mb-10">
+            <h2 class="category-title">🤝 Comunidade Masterclass 🌐</h2>
+            <div class="card text-center">
+                <p class="description mb-4">
+                    Acreditamos que o aprendizado é mais poderoso quando compartilhado. Conecte-se com outros entusiastas, compartilhe experiências, faça perguntas e receba apoio. Nossa comunidade é o seu espaço para crescer junto!
+                </p>
+                <p class="description">
+                    Fique atento(a) aos nossos futuros fóruns de discussão, grupos de estudo virtuais e sessões de perguntas e respostas com especialistas. Juntos, vamos construir seu corpo, sua mente e sua vida!
+                </p>
+            </div>
+        </section>
+
+        <!-- Challenges & Rewards Section -->
+        <section id="challenges-rewards-section" class="mb-10">
+            <h2 class="category-title">🏆 Desafios e Recompensas 🏅</h2>
+            <div class="card text-center">
+                <p class="description mb-4">
+                    Mantenha-se motivado(a) com desafios interativos e recompensas por suas conquistas! Cada passo na sua jornada de aprendizado pode ser divertido e gratificante.
+                </p>
+                <p class="description">
+                    Em breve, você poderá ganhar pontos, distintivos e subir no ranking ao dominar novos conceitos e completar atividades. Transforme seu aprendizado em um jogo e celebre cada vitória!
+                </p>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <!-- Sports Category -->
+        <section id="sports-section" class="mb-10">
+            <h2 class="category-title">🏆 Esportes e Disciplinas 🤸‍♂️</h2>
+            <div id="sports-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Squash -->
+                <div class="card" data-name="Squash">
+                    <h3 class="item-title">
+                        <span class="emoji">🏸</span> Squash
+                        <button class="play-audio-btn" onclick="playAudio('Squash')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Squash', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-squash-en">A fast-paced racket sport played by two or four players in a four-walled court, demanding agility and quick reflexes.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-squash-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um esporte de raquete rápido jogado por dois ou quatro jogadores em uma quadra de quatro paredes, exigindo agilidade e reflexos rápidos.
+                        <br>
+                        <strong>Benefícios:</strong> Melhora a agilidade, reflexos, coordenação e resistência cardiovascular.
+                    </p>
+                    <div id="info-squash" class="detailed-info hidden"></div>
+                </div>
+                <!-- Tennis -->
+                <div class="card" data-name="Tennis">
+                    <h3 class="item-title">
+                        <span class="emoji">🎾</span> Tênis
+                        <button class="play-audio-btn" onclick="playAudio('Tennis')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Tennis', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-tennis-en">A racket sport played on a court with a net, where players hit a ball over the net into the opponent's court, requiring precision and endurance.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-tennis-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um esporte de raquete jogado em uma quadra com uma rede, onde os jogadores batem uma bola sobre a rede para a quadra do adversário, exigindo precisão e resistência.
+                        <br>
+                        <strong>Benefícios:</strong> Desenvolve a coordenação olho-mão, agilidade, estratégia e resistência.
+                    </p>
+                    <div id="info-tennis" class="detailed-info hidden"></div>
+                </div>
+                <!-- Football (Soccer) -->
+                <div class="card" data-name="Football Soccer">
+                    <h3 class="item-title">
+                        <span class="emoji">⚽</span> Futebol
+                        <button class="play-audio-btn" onclick="playAudio('Football or Soccer')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Football (Soccer)', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-football-en">A team sport played with a ball between two teams of 11 players, primarily using their feet to propel the ball towards the opponent's goal.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-football-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um esporte coletivo jogado com uma bola entre duas equipes de 11 jogadores, usando principalmente os pés para impulsionar a bola em direção ao gol adversário.
+                        <br>
+                        <strong>Benefícios:</strong> Melhora o condicionamento cardiovascular, trabalho em equipe, coordenação e agilidade.
+                    </p>
+                    <div id="info-football-soccer" class="detailed-info hidden"></div>
+                </div>
+                <!-- Futsal -->
+                <div class="card" data-name="Futsal">
+                    <h3 class="item-title">
+                        <span class="emoji">🥅</span> Futsal
+                        <button class="play-audio-btn" onclick="playAudio('Futsal')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Futsal', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-futsal-en">A variant of association football played on a smaller hard court, primarily indoors, emphasizing quick passes and close control.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-futsal-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Uma variante do futebol de campo jogada em uma quadra menor e dura, principalmente em ambientes fechados, enfatizando passes rápidos e controle de bola próximo.
+                        <br>
+                        <strong>Benefícios:</strong> Aprimora a velocidade, técnica com a bola, agilidade e tomada de decisão rápida.
+                    </p>
+                    <div id="info-futsal" class="detailed-info hidden"></div>
+                </div>
+                <!-- Rugby -->
+                <div class="card" data-name="Rugby">
+                    <h3 class="item-title">
+                        <span class="emoji">🏉</span> Rugby
+                        <button class="play-audio-btn" onclick="playAudio('Rugby')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Rugby', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-rugby-en">A team sport played with an oval ball, involving running with the ball, passing, and tackling, known for its physical demands.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-rugby-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um esporte coletivo jogado com uma bola oval, envolvendo corrida com a bola, passes e tackles, conhecido por suas exigências físicas.
+                        <br>
+                        <strong>Benefícios:</strong> Desenvolve força, resistência, trabalho em equipe e resiliência física.
+                    </p>
+                    <div id="info-rugby" class="detailed-info hidden"></div>
+                </div>
+                <!-- Handball -->
+                <div class="card" data-name="Handball">
+                    <h3 class="item-title">
+                        <span class="emoji">🤾‍♀️</span> Handebol
+                        <button class="play-audio-btn" onclick="playAudio('Handball')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Handball', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-handball-en">A team sport in which two teams of seven players pass a ball using their hands with the aim of throwing it into the goal of the other team, combining elements of soccer and basketball.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-handball-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um esporte coletivo em que duas equipes de sete jogadores passam uma bola usando as mãos com o objetivo de jogá-la no gol da outra equipe, combinando elementos de futebol e basquete.
+                        <br>
+                        <strong>Benefícios:</strong> Aumenta a coordenação motora, agilidade, força de arremesso e raciocínio tático.
+                    </p>
+                    <div id="info-handball" class="detailed-info hidden"></div>
+                </div>
+                <!-- Play Marble -->
+                <div class="card" data-name="Play Marble">
+                    <h3 class="item-title">
+                        <span class="emoji">⚪</span> Bolinha de Gude
+                        <button class="play-audio-btn" onclick="playAudio('Play Marble')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Play Marble', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-play-marble-en">A traditional game played with small spherical marbles, often involving flicking them to hit others, promoting fine motor skills and strategy.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-play-marble-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um jogo tradicional jogado com pequenas bolinhas de gude esféricas, muitas vezes envolvendo arremessá-las para acertar outras, promovendo a coordenação motora fina e estratégia.
+                        <br>
+                        <strong>Benefícios:</strong> Desenvolve a coordenação motora fina, precisão e raciocínio estratégico.
+                    </p>
+                    <div id="info-play-marble" class="detailed-info hidden"></div>
+                </div>
+                <!-- Yoga -->
+                <div class="card" data-name="Yoga">
+                    <h3 class="item-title">
+                        <span class="emoji">🧘‍♀️</span> Yoga
+                        <button class="play-audio-btn" onclick="playAudio('Yoga')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Yoga', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-yoga-en">A spiritual and ascetic discipline, including breath control, simple meditation, and the adoption of specific bodily postures, widely practiced for health, relaxation, and flexibility.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-yoga-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Uma disciplina espiritual e ascética, incluindo controle da respiração, meditação simples e a adoção de posturas corporais específicas, amplamente praticada para saúde, relaxamento e flexibilidade.
+                        <br>
+                        <strong>Benefícios:</strong> Melhora a flexibilidade, força, equilíbrio, bem-estar mental e redução do estresse.
+                    </p>
+                    <div id="info-yoga" class="detailed-info hidden"></div>
+                </div>
+                <!-- FitDance -->
+                <div class="card" data-name="FitDance">
+                    <h3 class="item-title">
+                        <span class="emoji">💃</span> FitDance
+                        <button class="play-audio-btn" onclick="playAudio('FitDance')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('FitDance', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-fitdance-en">A Brazilian dance fitness program that combines various dance styles with aerobic exercises, designed to be fun and engaging.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-fitdance-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um programa brasileiro de fitness de dança que combina vários estilos de dança com exercícios aeróbicos, projetado para ser divertido e envolvente.
+                        <br>
+                        <strong>Benefícios:</strong> Melhora o condicionamento cardiovascular, coordenação, ritmo e humor.
+                    </p>
+                    <div id="info-fitdance" class="detailed-info hidden"></div>
+                </div>
+                <!-- Dancing -->
+                <div class="card" data-name="Dancing">
+                    <h3 class="item-title">
+                        <span class="emoji">🕺</span> Dança
+                        <button class="play-audio-btn" onclick="playAudio('Dancing')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Dancing', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-dancing-en">Moving rhythmically to music, typically as a form of entertainment, expression, or exercise, offering a full-body workout.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-dancing-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Mover-se ritmicamente ao som da música, geralmente como forma de entretenimento, expressão ou exercício, oferecendo um treino de corpo inteiro.
+                        <br>
+                        <strong>Benefícios:</strong> Melhora a coordenação, flexibilidade, ritmo, condicionamento cardiovascular e expressão corporal.
+                    </p>
+                    <div id="info-dancing" class="detailed-info hidden"></div>
+                </div>
+                <!-- Ballet -->
+                <div class="card" data-name="Ballet">
+                    <h3 class="item-title">
+                        <span class="emoji">🩰</span> Balé
+                        <button class="play-audio-btn" onclick="playAudio('Ballet')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Ballet', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-ballet-en">A classical dance form characterized by graceful, precise movements and elaborate formal gestures, building strength, flexibility, and discipline.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-ballet-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Uma forma de dança clássica caracterizada por movimentos graciosos e precisos e gestos formais elaborados, construindo força, flexibilidade e disciplina.
+                        <br>
+                        <strong>Benefícios:</strong> Aumenta a força muscular, flexibilidade, postura, equilíbrio e disciplina.
+                    </p>
+                    <div id="info-ballet" class="detailed-info hidden"></div>
+                </div>
+                <!-- Stretching -->
+                <div class="card" data-name="Stretching">
+                    <h3 class="item-title">
+                        <span class="emoji">🤸‍♂️</span> Alongamento
+                        <button class="play-audio-btn" onclick="playAudio('Stretching')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Stretching', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-stretching-en">A form of physical exercise in which a specific muscle or tendon is deliberately stretched to improve the muscle's felt elasticity and achieve comfortable muscle tone, crucial for injury prevention.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-stretching-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Uma forma de exercício físico em que um músculo ou tendão específico é deliberadamente alongado para melhorar a elasticidade do músculo e alcançar um tônus muscular confortável, crucial para a prevenção de lesões.
+                        <br>
+                        <strong>Benefícios:</strong> Aumenta a flexibilidade, amplitude de movimento, reduz o risco de lesões e alivia a tensão muscular.
+                    </p>
+                    <div id="info-stretching" class="detailed-info hidden"></div>
+                </div>
+                <!-- Muay Thai -->
+                <div class="card" data-name="Muay Thai">
+                    <h3 class="item-title">
+                        <span class="emoji">🥊</span> Muay Thai
+                        <button class="play-audio-btn" onclick="playAudio('Muay Thai')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Muay Thai', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-muay-thai-en">A combat sport of Thailand that uses stand-up striking along with various clinching techniques, known as the "Art of Eight Limbs."</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-muay-thai-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um esporte de combate da Tailândia que usa golpes em pé juntamente com várias técnicas de clinch, conhecido como a "Arte das Oito Armas".
+                        <br>
+                        <strong>Benefícios:</strong> Desenvolve força, resistência, disciplina, coordenação e habilidades de autodefesa.
+                    </p>
+                    <div id="info-muay-thai" class="detailed-info hidden"></div>
+                </div>
+                <!-- Spinning -->
+                <div class="card" data-name="Spinning">
+                    <h3 class="item-title">
+                        <span class="emoji">🚴‍♀️</span> Spinning
+                        <button class="play-audio-btn" onclick="playAudio('Spinning')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Spinning', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-spinning-en">A high-intensity indoor cycling workout, typically performed in a group setting with an instructor, great for cardiovascular health.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-spinning-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um treino de ciclismo indoor de alta intensidade, geralmente realizado em grupo com um instrutor, ótimo para a saúde cardiovascular.
+                        <br>
+                        <strong>Benefícios:</strong> Melhora a saúde cardiovascular, resistência das pernas e queima de calorias.
+                    </p>
+                    <div id="info-spinning" class="detailed-info hidden"></div>
+                </div>
+                <!-- Jump Class -->
+                <div class="card" data-name="Jump Class">
+                    <h3 class="item-title">
+                        <span class="emoji">🤸‍♀️</span> Aula de Jump
+                        <button class="play-audio-btn" onclick="playAudio('Jump Class')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Jump Class', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-jump-class-en">A fitness class that involves jumping on individual trampolines, offering a low-impact cardio workout and improving coordination.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-jump-class-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Uma aula de fitness que envolve pular em trampolins individuais, oferecendo um treino cardiovascular de baixo impacto e melhorando a coordenação.
+                        <br>
+                        <strong>Benefícios:</strong> Exercício cardiovascular de baixo impacto, melhora a coordenação, equilíbrio e fortalece os músculos das pernas.
+                    </p>
+                    <div id="info-jump-class" class="detailed-info hidden"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <!-- Basic Exercises for Beginners -->
+        <section id="basic-exercises-section" class="mb-10">
+            <h2 class="category-title">🌟 Exercícios Básicos para Iniciantes 🔰</h2>
+            <div id="basic-exercises-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Agachamento (Squats) -->
+                <div class="card" data-name="Agachamento Squats">
+                    <h3 class="item-title">
+                        <span class="emoji">🦵</span> Agachamento (Squats)
+                        <button class="play-audio-btn" onclick="playAudio('Squats')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Squats', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-squats-en">Stand with feet shoulder-width apart, bend your knees and hips as if sitting down, targeting glutes, quads, and hamstrings.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-squats-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Fique em pé com os pés na largura dos ombros, flexione os joelhos e quadris como se fosse sentar, trabalhando glúteos, quadríceps e posteriores da coxa.
+                        <br>
+                        <strong>Músculos trabalhados:</strong> Glúteos, Quadríceps, Isquiotibiais.
+                        <strong>Equipamento:</strong> Peso corporal (Bodyweight) ou Halteres (Dumbbells).
+                    </p>
+                    <div id="info-squats" class="detailed-info hidden"></div>
+                </div>
+                <!-- Flexões (Push-ups) -->
+                <div class="card" data-name="Flexoes Push-ups">
+                    <h3 class="item-title">
+                        <span class="emoji">💪</span> Flexões (Push-ups)
+                        <button class="play-audio-btn" onclick="playAudio('Push-ups')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Push-ups', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-push-ups-en">Place hands on the floor, keep your body straight, bend your arms to lower, and push up, working chest, shoulders, triceps, and core.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-push-ups-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Apoie as mãos no chão, corpo reto, flexione os braços para descer e empurre para subir, trabalhando peito, ombros, tríceps e core.
+                        <br>
+                        <strong>Músculos trabalhados:</strong> Peito, Ombros (Deltóides), Tríceps, Core.
+                        <strong>Equipamento:</strong> Peso corporal (Bodyweight).
+                    </p>
+                    <div id="info-push-ups" class="detailed-info hidden"></div>
+                </div>
+                <!-- Remada com halteres (Bent-over dumbbell rows) -->
+                <div class="card" data-name="Remada com halteres Bent-over dumbbell rows">
+                    <h3 class="item-title">
+                        <span class="emoji">🚣</span> Remada com Halteres (Bent-over dumbbell rows)
+                        <button class="play-audio-btn" onclick="playAudio('Bent-over dumbbell rows')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Bent-over dumbbell rows', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-bent-over-dumbbell-rows-en">Lean forward at the torso, pull dumbbells towards your hips, keeping elbows close, engaging back and biceps.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-bent-over-dumbbell-rows-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Incline o tronco à frente, puxe os halteres em direção ao quadril, mantendo os cotovelos próximos, trabalhando costas e bíceps.
+                        <br>
+                        <strong>Músculos trabalhados:</strong> Costas (Latíssimo do Dorso, Romboides), Bíceps.
+                        <strong>Equipamento:</strong> Halteres (Dumbbells).
+                    </p>
+                    <div id="info-bent-over-dumbbell-rows" class="detailed-info hidden"></div>
+                </div>
+                <!-- Prancha (Plank) -->
+                <div class="card" data-name="Prancha Plank">
+                    <h3 class="item-title">
+                        <span class="emoji">🧘</span> Prancha (Plank)
+                        <button class="play-audio-btn" onclick="playAudio('Plank')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Plank', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-plank-en">Maintain a straight body supported on forearms and toes, contracting your core, excellent for core and shoulder stability.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-plank-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Mantenha o corpo reto apoiado nos antebraços e pontas dos pés, contraindo o abdômen, excelente para estabilidade do core e ombros.
+                        <br>
+                        <strong>Músculos trabalhados:</strong> Core (Reto Abdominal, Oblíquos, Transverso do Abdômen), Ombros.
+                        <strong>Equipamento:</strong> Peso corporal (Bodyweight).
+                    </p>
+                    <div id="info-plank" class="detailed-info hidden"></div>
+                </div>
+                <!-- Desenvolvimento de ombro com halteres (Dumbbell shoulder press) -->
+                <div class="card" data-name="Desenvolvimento de ombro com halteres Dumbbell shoulder press">
+                    <h3 class="item-title">
+                        <span class="emoji">⬆️</span> Desenvolvimento de Ombro com Halteres
+                        <button class="play-audio-btn" onclick="playAudio('Dumbbell shoulder press')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Dumbbell shoulder press', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-dumbbell-shoulder-press-en">Push dumbbells upwards from shoulder height, keeping your core firm, targeting shoulders and triceps.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-dumbbell-shoulder-press-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Empurre os halteres para cima a partir da altura dos ombros, mantendo o core firme, trabalhando ombros e tríceps.
+                        <br>
+                        <strong>Músculos trabalhados:</strong> Ombros (Deltóides), Tríceps.
+                        <strong>Equipamento:</strong> Halteres (Dumbbells).
+                    </p>
+                    <div id="info-dumbbell-shoulder-press" class="detailed-info hidden"></div>
+                </div>
+                <!-- Avanço ou passada (Lunges) -->
+                <div class="card" data-name="Avanco Lunges">
+                    <h3 class="item-title">
+                        <span class="emoji">🚶‍♀️</span> Avanço ou Passada (Lunges)
+                        <button class="play-audio-btn" onclick="playAudio('Lunges')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Lunges', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-lunges-en">Take a step forward and bend your knees to a 90° angle, then return, working quads, glutes, and hamstrings.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-lunges-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Dê um passo à frente e flexione os joelhos até formar ângulo de 90°, depois retorne, trabalhando quadríceps, glúteos e posteriores da coxa.
+                        <br>
+                        <strong>Músculos trabalhados:</strong> Quadríceps, Glúteos, Isquiotibiais.
+                        <strong>Equipamento:</strong> Peso corporal (Bodyweight) ou Halteres (Dumbbells).
+                    </p>
+                    <div id="info-lunges" class="detailed-info hidden"></div>
+                </div>
+            </div>
+            <div class="info-box mt-8">
+                <h3>Dicas Importantes para Iniciantes 💡</h3>
+                <ul>
+                    <li><span id="tip1-en">Start without weight or with light weights to learn the correct technique.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('tip1-en').innerText)">🔊</button><br><strong>Português:</strong> Comece sem peso ou com pesos leves para aprender a técnica correta.</li>
+                    <li><span id="tip2-en">Prioritize posture and movement control to avoid injuries.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('tip2-en').innerText)">🔊</button><br><strong>Português:</strong> Priorize a postura e o controle do movimento para evitar lesões.</li>
+                    <li><span id="tip3-en">Perform 3 to 4 sets of 8 to 12 repetitions for each exercise.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('tip3-en').innerText)">🔊</button><br><strong>Português:</strong> Realize 3 a 4 séries de 8 a 12 repetições para cada exercício.</li>
+                    <li><span id="tip4-en">Include a warm-up before and stretching after your workout.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('tip4-en').innerText)">🔊</button><br><strong>Português:</strong> Inclua aquecimento antes e alongamento após o treino.</li>
+                </ul>
+            </div>
+            <div class="info-box mt-8">
+                <h3>Exemplos de Treinos para Iniciantes 📋</h3>
+                <ul>
+                    <li><span id="workout1-en"><strong>Strength Training:</strong> squats, push-ups, rows, plank, shoulder press, and lunges.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('workout1-en').innerText)">🔊</button><br><strong>Português:</strong> <strong>Treino de força:</strong> agachamentos, flexões, remadas, prancha, desenvolvimento de ombro e avanços.</li>
+                    <li><span id="workout2-en"><strong>Cardiovascular Training:</strong> brisk walking, exercise bike, or light HIIT.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('workout2-en').innerText)">🔊</button><br><strong>Português:</strong> <strong>Treino cardiovascular:</strong> caminhada rápida, bicicleta ergométrica, ou HIIT leve.</li>
+                </ul>
+                <p class="description mt-4">
+                    <span id="offer-en">If you wish, I can create a complete workout plan for you, with sets, repetitions, and guidance. Would you like that?</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('offer-en').innerText)">🔊</button>
+                    <br>
+                    <strong>Português:</strong> Se quiser, posso montar um plano de treino completo para você, com séries, repetições e orientações. Quer?
+                </p>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <!-- Gym Professionals & Facilities -->
+        <section id="professionals-facilities-section" class="mb-10">
+            <h2 class="category-title">👨‍💼 Profissionais e Instalações da Academia 🏢</h2>
+            <div id="professionals-facilities-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Personal Trainer -->
+                <div class="card" data-name="Personal Trainer">
+                    <h3 class="item-title">
+                        <span class="emoji">👨‍🏫</span> Personal Trainer
+                        <button class="play-audio-btn" onclick="playAudio('Personal Trainer')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Personal Trainer', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-personal-trainer-en">A fitness professional who guides and motivates individuals through personalized exercise programs, ensuring proper form and maximizing results.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-personal-trainer-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um profissional de fitness que orienta e motiva indivíduos através de programas de exercícios personalizados, garantindo a forma correta e maximizando os resultados.
+                        <br>
+                        <strong>Função:</strong> Orientação personalizada, motivação, correção de forma, desenvolvimento de planos de treino.
+                    </p>
+                    <div id="info-personal-trainer" class="detailed-info hidden"></div>
+                </div>
+                <!-- Drinking Fountain -->
+                <div class="card" data-name="Drinking Fountain">
+                    <h3 class="item-title">
+                        <span class="emoji">💧</span> Bebedouro
+                        <button class="play-audio-btn" onclick="playAudio('Drinking Fountain')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Drinking Fountain', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-drinking-fountain-en">A public fixture that provides drinking water, essential for hydration during workouts and maintaining energy levels.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-drinking-fountain-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um equipamento público que fornece água potável, essencial para hidratação durante os treinos e para manter os níveis de energia.
+                        <br>
+                        <strong>Função:</strong> Hidratação essencial durante e após o exercício.
+                    </p>
+                    <div id="info-drinking-fountain" class="detailed-info hidden"></div>
+                </div>
+                <!-- Tatami -->
+                <div class="card" data-name="Tatami">
+                    <h3 class="item-title">
+                        <span class="emoji">🥋</span> Tatame
+                        <button class="play-audio-btn" onclick="playAudio('Tatami')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Tatami', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-tatami-en">A type of mat used as a flooring material in martial arts dojos and yoga studios, providing cushioning for falls, throws, and comfortable practice.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-tatami-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um tipo de esteira usada como material de piso em dojôs de artes marciais e estúdios de yoga, proporcionando amortecimento para quedas, arremessos e prática confortável.
+                        <br>
+                        <strong>Função:</strong> Amortecimento e segurança para práticas de artes marciais, yoga e alongamento.
+                    </p>
+                    <div id="info-tatami" class="detailed-info hidden"></div>
+                </div>
+                <!-- Ropes Exercises (Battle Ropes) -->
+                <div class="card" data-name="Ropes Exercises Battle Ropes">
+                    <h3 class="item-title">
+                        <span class="emoji">〰️</span> Cordas de Batalha (Battle Ropes)
+                        <button class="play-audio-btn" onclick="playAudio('Ropes Exercises or Battle Ropes')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Ropes Exercises (Battle Ropes)', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-ropes-exercises-en">High-intensity workouts using thick, heavy ropes to create waves, slams, and other dynamic movements for strength, cardio, and endurance.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-ropes-exercises-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Treinos de alta intensidade usando cordas grossas e pesadas para criar ondas, batidas e outros movimentos dinâmicos para força, cardio e resistência.
+                        <br>
+                        <strong>Função:</strong> Treino de força, condicionamento cardiovascular e resistência muscular.
+                    </p>
+                    <div id="info-ropes-exercises-battle-ropes" class="detailed-info hidden"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <!-- Advanced Exercises & Machines -->
+        <section id="advanced-exercises-machines-section" class="mb-10">
+            <h2 class="category-title">💪 Exercícios e Máquinas Avançadas ⚙️</h2>
+            <div id="advanced-exercises-machines-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Agachamento (Squat) - Barra com pesos (Barbell) ou Smith Machine -->
+                <div class="card" data-name="Agachamento Squat Barbell Smith Machine">
+                    <h3 class="item-title">
+                        <span class="emoji">🏋️‍♀️</span> Agachamento (Squat)
+                        <button class="play-audio-btn" onclick="playAudio('Squat with Barbell or Smith Machine')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Squat with Barbell or Smith Machine', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-squat-barbell-en">A fundamental strength exercise performed with a barbell on the back or using a Smith Machine, primarily targeting glutes, quads, and hamstrings.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-squat-barbell-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um exercício de força fundamental realizado com uma barra nas costas ou usando a Máquina Smith, visando principalmente glúteos, quadríceps e posteriores da coxa.
+                        <br>
+                        <strong>Equipamento:</strong> Barra com pesos (Barbell) ou Máquina Smith.
+                        <strong>Músculos trabalhados:</strong> Glúteos, Quadríceps, Isquiotibiais.
+                    </p>
+                    <div id="info-squat-with-barbell-or-smith-machine" class="detailed-info hidden"></div>
+                </div>
+                <!-- Leg Press - Máquina Leg Press -->
+                <div class="card" data-name="Leg Press Machine">
+                    <h3 class="item-title">
+                        <span class="emoji">🦵</span> Leg Press
+                        <button class="play-audio-btn" onclick="playAudio('Leg Press Machine')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Leg Press Machine', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-leg-press-machine-en">A machine where you push a platform with your legs, excellent for working leg muscles without requiring much balance, focusing on quads, glutes, and hamstrings.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-leg-press-machine-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Máquina onde você empurra uma plataforma com as pernas, excelente para trabalhar os músculos das pernas sem exigir muito equilíbrio, focando em quadríceps, glúteos e posteriores da coxa.
+                        <br>
+                        <strong>Equipamento:</strong> Máquina Leg Press.
+                        <strong>Músculos trabalhados:</strong> Quadríceps, Glúteos, Isquiotibiais.
+                    </p>
+                    <div id="info-leg-press-machine" class="detailed-info hidden"></div>
+                </div>
+                <!-- Flexão de braço (Push-up) - Peso corporal (Bodyweight) -->
+                <div class="card" data-name="Flexao de braco Push-up Bodyweight">
+                    <h3 class="item-title">
+                        <span class="emoji">🤸‍♂️</span> Flexão de Braço (Push-up)
+                        <button class="play-audio-btn" onclick="playAudio('Push-up Bodyweight')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Push-up Bodyweight', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-push-up-bodyweight-en">A classic bodyweight exercise that strengthens the chest, shoulders, triceps, and core.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-push-up-bodyweight-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um exercício clássico com peso corporal que fortalece o peito, ombros, tríceps e core.
+                        <br>
+                        <strong>Equipamento:</strong> Peso corporal (Bodyweight).
+                        <strong>Músculos trabalhados:</strong> Peito, Ombros (Deltóides), Tríceps, Core.
+                    </p>
+                    <div id="info-push-up-bodyweight" class="detailed-info hidden"></div>
+                </div>
+                <!-- Supino (Bench Press) - Banco e barra com pesos (Bench and Barbell) -->
+                <div class="card" data-name="Supino Bench Press Barbell">
+                    <h3 class="item-title">
+                        <span class="emoji">🏋️</span> Supino (Bench Press)
+                        <button class="play-audio-btn" onclick="playAudio('Bench Press with Barbell')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Bench Press with Barbell', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-bench-press-barbell-en">A classic upper body exercise performed lying on a bench, pressing a barbell upwards, targeting chest, shoulders, and triceps.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-bench-press-barbell-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um exercício clássico para a parte superior do corpo realizado deitado em um banco, empurrando uma barra para cima, visando peito, ombros e tríceps.
+                        <br>
+                        <strong>Equipamento:</strong> Banco e Barra com pesos (Barbell).
+                        <strong>Músculos trabalhados:</strong> Peito (Peitoral Maior), Ombros (Deltóides Anteriores), Tríceps.
+                    </p>
+                    <div id="info-bench-press-with-barbell" class="detailed-info hidden"></div>
+                </div>
+                <!-- Remada curvada com halteres (Bent-over Dumbbell Row) - Halteres (Dumbbells) -->
+                <div class="card" data-name="Remada curvada com halteres Dumbbells">
+                    <h3 class="item-title">
+                        <span class="emoji">💪</span> Remada Curvada com Halteres
+                        <button class="play-audio-btn" onclick="playAudio('Bent-over Dumbbell Row')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Bent-over Dumbbell Row', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-bent-over-dumbbell-row-en">An exercise performed with dumbbells, bending at the waist and pulling the weights towards your torso, effectively working the back and biceps.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-bent-over-dumbbell-row-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um exercício realizado com halteres, inclinando-se na cintura e puxando os pesos em direção ao tronco, trabalhando eficazmente as costas e os bíceps.
+                        <br>
+                        <strong>Equipamento:</strong> Halteres (Dumbbells).
+                        <strong>Músculos trabalhados:</strong> Costas (Latíssimo do Dorso, Romboides), Bíceps.
+                    </p>
+                    <div id="info-bent-over-dumbbell-row" class="detailed-info hidden"></div>
+                </div>
+                <!-- Puxada na barra (pulldown) - Máquina Pulldown -->
+                <div class="card" data-name="Puxada na barra Lat Pulldown Machine">
+                    <h3 class="item-title">
+                        <span class="emoji">⬆️</span> Puxada na Barra (Lat Pulldown)
+                        <button class="play-audio-btn" onclick="playAudio('Lat Pulldown Machine')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Lat Pulldown Machine', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-lat-pulldown-machine-en">A machine-based exercise where you pull a bar down towards your chest, primarily targeting the latissimus dorsi muscles of the back and biceps.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-lat-pulldown-machine-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um exercício baseado em máquina onde você puxa uma barra para baixo em direção ao peito, visando principalmente os músculos latíssimo do dorso das costas e bíceps.
+                        <br>
+                        <strong>Equipamento:</strong> Máquina de Puxada (Lat Pulldown Machine).
+                        <strong>Músculos trabalhados:</strong> Costas (Latíssimo do Dorso), Bíceps.
+                    </p>
+                    <div id="info-lat-pulldown-machine" class="detailed-info hidden"></div>
+                </div>
+                <!-- Desenvolvimento de ombro com halteres (Dumbbell Shoulder Press) - Halteres (Dumbbells) -->
+                <div class="card" data-name="Desenvolvimento de ombro com halteres Dumbbells">
+                    <h3 class="item-title">
+                        <span class="emoji">🏋️‍♂️</span> Desenvolvimento de Ombro com Halteres
+                        <button class="play-audio-btn" onclick="playAudio('Dumbbell Shoulder Press')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Dumbbell Shoulder Press', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-dumbbell-shoulder-press-en-2">A strength exercise using dumbbells, pressing them overhead from shoulder height, targeting the deltoids and triceps.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-dumbbell-shoulder-press-en-2').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um exercício de força usando halteres, empurrando-os acima da cabeça a partir da altura dos ombros, visando os deltóides e tríceps.
+                        <br>
+                        <strong>Equipamento:</strong> Halteres (Dumbbells).
+                        <strong>Músculos trabalhados:</strong> Ombros (Deltóides), Tríceps.
+                    </p>
+                    <div id="info-dumbbell-shoulder-press" class="detailed-info hidden"></div>
+                </div>
+                <!-- Elevação lateral de ombro (Lateral Raise) - Halteres (Dumbbells) -->
+                <div class="card" data-name="Elevacao lateral de ombro Lateral Raise Dumbbells">
+                    <h3 class="item-title">
+                        <span class="emoji">↔️</span> Elevação Lateral de Ombro
+                        <button class="play-audio-btn" onclick="playAudio('Lateral Raise')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Lateral Raise', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-lateral-raise-en">An isolation exercise using dumbbells, raising them out to the sides until arms are parallel to the floor, specifically targeting the side deltoids.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-lateral-raise-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um exercício de isolamento usando halteres, levantando-os para os lados até os braços ficarem paralelos ao chão, visando especificamente os deltóides laterais.
+                        <br>
+                        <strong>Equipamento:</strong> Halteres (Dumbbells).
+                        <strong>Músculos trabalhados:</strong> Ombros (Deltóides Laterais).
+                    </p>
+                    <div id="info-lateral-raise" class="detailed-info hidden"></div>
+                </div>
+                <!-- Extensão de tríceps na polia (Triceps Pushdown) - Máquina de polia (Cable Machine) -->
+                <div class="card" data-name="Extensao de triceps na polia Triceps Pushdown Cable Machine">
+                    <h3 class="item-title">
+                        <span class="emoji">⬇️</span> Extensão de Tríceps na Polia
+                        <button class="play-audio-btn" onclick="playAudio('Triceps Pushdown')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Triceps Pushdown', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-triceps-pushdown-en">An exercise performed on a cable machine, pushing a bar or rope downwards to extend the arms, effectively isolating the triceps.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-triceps-pushdown-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um exercício realizado em uma máquina de polia, empurrando uma barra ou corda para baixo para estender os braços, isolando eficazmente os tríceps.
+                        <br>
+                        <strong>Equipamento:</strong> Máquina de Polia (Cable Machine).
+                        <strong>Músculos trabalhados:</strong> Tríceps.
+                    </p>
+                    <div id="info-triceps-pushdown" class="detailed-info hidden"></div>
+                </div>
+                <!-- Rosca direta com barra (Barbell Bicep Curl) - Barra com pesos (Barbell) -->
+                <div class="card" data-name="Rosca direta com barra Barbell Bicep Curl">
+                    <h3 class="item-title">
+                        <span class="emoji">💪</span> Rosca Direta com Barra
+                        <button class="play-audio-btn" onclick="playAudio('Barbell Bicep Curl')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Barbell Bicep Curl', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-barbell-bicep-curl-en">A classic arm exercise performed with a barbell, curling it upwards towards the chest, primarily targeting the biceps.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-barbell-bicep-curl-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um exercício clássico para os braços realizado com uma barra, curvando-a para cima em direção ao peito, visando principalmente os bíceps.
+                        <br>
+                        <strong>Equipamento:</strong> Barra com pesos (Barbell).
+                        <strong>Músculos trabalhados:</strong> Bíceps.
+                    </p>
+                    <div id="info-barbell-bicep-curl" class="detailed-info hidden"></div>
+                </div>
+                <!-- Abdominal crunch (Crunch) - Peso corporal ou bola suíça (Swiss Ball) -->
+                <div class="card" data-name="Abdominal crunch Crunch Bodyweight Swiss Ball">
+                    <h3 class="item-title">
+                        <span class="emoji">💥</span> Abdominal Crunch
+                        <button class="play-audio-btn" onclick="playAudio('Abdominal Crunch')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 : 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Abdominal Crunch', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-abdominal-crunch-en">A common core exercise performed lying on your back, lifting your shoulders off the floor, or using a Swiss Ball for added range of motion.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-abdominal-crunch-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um exercício comum para o core realizado deitado de costas, levantando os ombros do chão, ou usando uma Bola Suíça para maior amplitude de movimento.
+                        <br>
+                        <strong>Equipamento:</strong> Peso corporal (Bodyweight) ou Bola Suíça (Swiss Ball).
+                        <strong>Músculos trabalhados:</strong> Abdômen (Reto Abdominal, Oblíquos).
+                    </p>
+                    <div id="info-abdominal-crunch" class="detailed-info hidden"></div>
+                </div>
+                <!-- Stiff (Romanian Deadlift) - Barra com pesos (Barbell) -->
+                <div class="card" data-name="Stiff Romanian Deadlift Barbell">
+                    <h3 class="item-title">
+                        <span class="emoji">🏋️‍♀️</span> Stiff (Romanian Deadlift)
+                        <button class="play-audio-btn" onclick="playAudio('Romanian Deadlift')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Romanian Deadlift', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-romanian-deadlift-en">A variation of the deadlift performed with a barbell, focusing on the hamstrings, glutes, and lower back by hinging at the hips.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-romanian-deadlift-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Uma variação do levantamento terra realizada com uma barra, focando nos posteriores da coxa, glúteos e lombar, através de uma flexão no quadril.
+                        <br>
+                        <strong>Equipamento:</strong> Barra com pesos (Barbell).
+                        <strong>Músculos trabalhados:</strong> Isquiotibiais, Glúteos, Lombar.
+                    </p>
+                    <div id="info-romanian-deadlift" class="detailed-info hidden"></div>
+                </div>
+                <!-- Elevação de panturrilha na máquina (Calf Raise Machine) - Máquina de panturrilha (Calf Raise Machine) -->
+                <div class="card" data-name="Elevacao de panturrilha Calf Raise Machine">
+                    <h3 class="item-title">
+                        <span class="emoji">🦵</span> Elevação de Panturrilha na Máquina
+                        <button class="play-audio-btn" onclick="playAudio('Calf Raise Machine')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Calf Raise Machine', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-calf-raise-machine-en">A machine-specific exercise for strengthening the calf muscles by pushing up on the balls of your feet.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-calf-raise-machine-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um exercício específico de máquina para fortalecer os músculos da panturrilha, empurrando para cima nas pontas dos pés.
+                        <br>
+                        <strong>Equipamento:</strong> Máquina de Panturrilha (Calf Raise Machine).
+                        <strong>Músculos trabalhados:</strong> Panturrilhas (Gastrocnêmio, Sóleo).
+                    </p>
+                    <div id="info-calf-raise-machine" class="detailed-info hidden"></div>
+                </div>
+                <!-- Treadmill -->
+                <div class="card" data-name="Treadmill">
+                    <h3 class="item-title">
+                        <span class="emoji">🏃‍♀️</span> Esteira
+                        <button class="play-audio-btn" onclick="playAudio('Treadmill')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Treadmill', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-treadmill-en">A device used for walking or running indoors, with a moving belt driven by a motor or by the user's feet, offering a versatile cardio workout.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-treadmill-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um aparelho usado para caminhar ou correr em ambientes fechados, com uma esteira móvel acionada por um motor ou pelos pés do usuário, oferecendo um treino cardiovascular versátil.
+                        <br>
+                        <strong>Equipamento:</strong> Máquina (Cardio).
+                        <strong>Músculos trabalhados:</strong> Pernas, Glúteos, Core (estabilização).
+                    </p>
+                    <div id="info-treadmill" class="detailed-info hidden"></div>
+                </div>
+                <!-- Elliptical -->
+                <div class="card" data-name="Elliptical Trainer">
+                    <h3 class="item-title">
+                        <span class="emoji">🏃‍♀️</span> Elíptico
+                        <button class="play-audio-btn" onclick="playAudio('Elliptical Trainer')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Elliptical Trainer', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-elliptical-trainer-en">A stationary exercise machine used to simulate stair climbing, walking, or running without causing excessive pressure to the joints, providing a full-body cardio workout.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-elliptical-trainer-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Uma máquina de exercício estacionária usada para simular subir escadas, caminhar ou correr sem causar pressão excessiva nas articulações, proporcionando um treino cardiovascular de corpo inteiro.
+                        <br>
+                        <strong>Equipamento:</strong> Máquina (Cardio).
+                        <strong>Músculos trabalhados:</strong> Pernas, Glúteos, Ombros, Braços (corpo inteiro).
+                    </p>
+                    <div id="info-elliptical-trainer" class="detailed-info hidden"></div>
+                </div>
+                <!-- Stationary Bike -->
+                <div class="card" data-name="Stationary Bike">
+                    <h3 class="item-title">
+                        <span class="emoji">🚴</span> Bicicleta Ergométrica
+                        <button class="play-audio-btn" onclick="playAudio('Stationary Bike')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Stationary Bike', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-stationary-bike-en">A piece of exercise equipment that simulates cycling, used for cardiovascular fitness and strengthening leg muscles with low impact.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-stationary-bike-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um equipamento de exercício que simula o ciclismo, usado para condicionamento cardiovascular e fortalecimento dos músculos das pernas com baixo impacto.
+                        <br>
+                        <strong>Equipamento:</strong> Máquina (Cardio).
+                        <strong>Músculos trabalhados:</strong> Quadríceps, Isquiotibiais, Glúteos, Panturrilhas.
+                    </p>
+                    <div id="info-stationary-bike" class="detailed-info hidden"></div>
+                </div>
+                <!-- Dumbbells -->
+                <div class="card" data-name="Dumbbells">
+                    <h3 class="item-title">
+                        <span class="emoji">🏋️‍♂️</span> Halteres
+                        <button class="play-audio-btn" onclick="playAudio('Dumbbells')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Dumbbells', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-dumbbells-en">Short bars with weights at each end, used for a wide variety of strength training exercises, offering versatility and promoting stability.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-dumbbells-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Barras curtas com pesos em cada extremidade, usadas para uma ampla variedade de exercícios de treinamento de força, oferecendo versatilidade e promovendo estabilidade.
+                        <br>
+                        <strong>Equipamento:</strong> Peso livre (Free weight).
+                        <strong>Músculos trabalhados:</strong> Todos os grupos musculares, dependendo do exercício.
+                    </p>
+                    <div id="info-dumbbells" class="detailed-info hidden"></div>
+                </div>
+                <!-- Cable Machine -->
+                <div class="card" data-name="Cable Machine">
+                    <h3 class="item-title">
+                        <span class="emoji">🔗</span> Máquina de Cabos (Cable Machine)
+                        <button class="play-audio-btn" onclick="playAudio('Cable Machine')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
+                        <button class="gemini-info-btn" onclick="getDetailedInfo('Cable Machine', this)">✨ Obter Detalhes ✨</button>
+                    </h3>
+                    <p class="description">
+                        <span id="desc-cable-machine-en">A versatile piece of gym equipment that uses cables and pulleys to provide constant resistance for a wide range of exercises, from triceps pushdowns to cable rows.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-cable-machine-en').innerText)">🔊</button>
+                        <br>
+                        <strong>Português:</strong> Um equipamento de ginástica versátil que usa cabos e polias para fornecer resistência constante para uma ampla gama de exercícios, desde extensões de tríceps a remadas.
+                        <br>
+                        <strong>Equipamento:</strong> Máquina (Máquina de Polia).
+                        <strong>Músculos trabalhados:</strong> Todos os grupos musculares, dependendo do exercício.
+                    </p>
+                    <div id="info-cable-machine" class="detailed-info hidden"></div>
+                </div>
+            </div>
+            <div class="info-box mt-8">
+                <h3>Explicações Rápidas sobre Algumas Máquinas 📊</h3>
+                <ul>
+                    <li><span id="machine-leg-press-en"><strong>Leg Press:</strong> A machine where you push a platform with your legs, excellent for working legs without demanding balance.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('machine-leg-press-en').innerText)">🔊</button><br><strong>Português:</strong> <strong>Leg Press:</strong> máquina onde você empurra uma plataforma com as pernas, excelente para trabalhar pernas sem exigir equilíbrio.</li>
+                    <li><span id="machine-smith-en"><strong>Smith Machine:</strong> A barbell guided on rails, used for squats and bench press with greater safety.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('machine-smith-en').innerText)">🔊</button><br><strong>Português:</strong> <strong>Máquina Smith:</strong> barra guiada em trilhos, usada para agachamentos e supino com maior segurança.</li>
+                    <li><span id="machine-pulldown-en"><strong>Pulldown Machine:</strong> Pulls the bar downwards, primarily working the back muscles.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('machine-pulldown-en').innerText)">🔊</button><br><strong>Português:</strong> <strong>Máquina de Puxada:</strong> puxa a barra para baixo, trabalha principalmente os músculos das costas.</li>
+                    <li><span id="machine-cable-en"><strong>Cable Machine (Pulley Machine):</strong> Versatile for various pushing and pulling exercises, like triceps extensions and rows.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('machine-cable-en').innerText)">🔊</button><br><strong>Português:</strong> <strong>Máquina de Cabos (Máquina de Polias):</strong> versátil para vários exercícios de puxar e empurrar, como extensão de tríceps e remadas.</li>
+                    <li><span id="machine-calf-raise-en"><strong>Calf Raise Machine:</strong> A specific machine for strengthening the calf muscles.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('machine-calf-raise-en').innerText)">🔊</button><br><strong>Português:</strong> <strong>Máquina de Panturrilha:</strong> máquina específica para fortalecer as panturrilhas.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <!-- Human Body & Pain Types Activity Section -->
+        <section id="human-body-activity-section" class="mb-10">
+            <h2 class="category-title">🧠 Atividade: Corpo Humano e Tipos de Dor 🩹</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- How to Play Section for Activity -->
+                <section id="how-to-play-activity" class="how-to-play col-span-full">
+                    <button class="close-btn" onclick="document.getElementById('how-to-play-activity').style.display='none'">✖</button>
+                    <h2 class="text-center text-blue-700">Como Jogar Esta Atividade</h2>
+                    <ol>
+                        <li><strong>Identifique Partes do Corpo:</strong>
+                            <ul>
+                                <li>Clique em "Obter Nova Parte do Corpo" para destacar uma parte aleatória do corpo.</li>
+                                <li>Digite o nome em inglês no campo de entrada.</li>
+                                <li>Clique em "Verificar Nome" para feedback.</li>
+                                <li>Use "Revelar Nome" se precisar de uma dica (sua pontuação será penalizada).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Explore Tipos de Dor:</strong>
+                            <ul>
+                                <li>Clique em "Obter Novo Cenário de Dor" para uma descrição de dor.</li>
+                                <li>Selecione o tipo de dor correto no menu suspenso.</li>
+                                <li>Clique em "Verificar Dor" para feedback.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Obtenha Informações da IA:</strong> Clique em "Obter Info da Parte do Corpo (IA)" ou "Obter Info do Tipo de Dor (IA)" para explicações detalhadas.</li>
+                        <li><strong>Pratique a Pronúncia:</strong> Use os botões de áudio para ouvir os nomes e gravar sua própria pronúncia.</li>
+                        <li><strong>Acompanhe Sua Pontuação:</strong> Sua pontuação é atualizada à medida que você joga!</li>
+                        <li><strong>Reiniciar:</strong> Clique em "Reiniciar Atividade" para começar de novo.</li>
+                    </ol>
+                </section>
+
+                <!-- Body Outline Section -->
+                <section class="card flex flex-col items-center justify-center p-6">
+                    <h2 class="text-2xl font-bold text-blue-700 mb-4">Clique em uma Parte do Corpo!</h2>
+                    <svg class="body-outline-svg" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Head -->
+                        <path id="head-activity" d="M100,20 A40,40 0 1,1 100,100 A40,40 0 0,1 100,20 Z" data-name-en="Head" data-name-pt="Cabeça"></path>
+                        <!-- Neck -->
+                        <rect id="neck-activity" x="90" y="100" width="20" height="20" rx="5" ry="5" data-name-en="Neck" data-name-pt="Pescoço"></rect>
+                        <!-- Chest/Torso -->
+                        <path id="chest-activity" d="M70,120 Q50,150 70,180 H130 Q150,150 130,120 Z" data-name-en="Chest" data-name-pt="Peito"></path>
+                        <!-- Abdomen -->
+                        <rect id="abdomen-activity" x="70" y="180" width="60" height="60" rx="10" ry="10" data-name-en="Abdomen" data-name-pt="Abdômen"></rect>
+                        <!-- Left Shoulder -->
+                        <circle id="left-shoulder-activity" cx="65" cy="130" r="10" data-name-en="Left Shoulder" data-name-pt="Ombro Esquerdo"></circle>
+                        <!-- Right Shoulder -->
+                        <circle id="right-shoulder-activity" cx="135" cy="130" r="10" data-name-en="Right Shoulder" data-name-pt="Ombro Direito"></circle>
+                        <!-- Left Arm -->
+                        <rect id="left-arm-activity" x="55" y="140" width="20" height="80" rx="5" ry="5" data-name-en="Left Arm" data-name-pt="Braço Esquerdo"></rect>
+                        <!-- Right Arm -->
+                        <rect id="right-arm-activity" x="125" y="140" width="20" height="80" rx="5" ry="5" data-name-en="Right Arm" data-name-pt="Braço Direito"></rect>
+                        <!-- Left Hand -->
+                        <circle id="left-hand-activity" cx="65" cy="230" r="8" data-name-en="Left Hand" data-name-pt="Mão Esquerda"></circle>
+                        <!-- Right Hand -->
+                        <circle id="right-hand-activity" cx="135" cy="230" r="8" data-name-en="Right Hand" data-name-pt="Mão Direita"></circle>
+                        <!-- Hips -->
+                        <rect id="hips-activity" x="70" y="240" width="60" height="20" rx="5" ry="5" data-name-en="Hips" data-name-pt="Quadris"></rect>
+                        <!-- Left Leg -->
+                        <rect id="left-leg-activity" x="75" y="260" width="20" height="100" rx="5" ry="5" data-name-en="Left Leg" data-name-pt="Perna Esquerda"></rect>
+                        <!-- Right Leg -->
+                        <rect id="right-leg-activity" x="105" y="260" width="20" height="100" rx="5" ry="5" data-name-en="Right Leg" data-name-pt="Perna Direita"></rect>
+                        <!-- Left Foot -->
+                        <rect id="left-foot-activity" x="70" y="360" width="30" height="15" rx="5" ry="5" data-name-en="Left Foot" data-name-pt="Pé Esquerdo"></rect>
+                        <!-- Right Foot -->
+                        <rect id="right-foot-activity" x="100" y="360" width="30" height="15" rx="5" ry="5" data-name-en="Right Foot" data-name-pt="Pé Direito"></rect>
+                    </svg>
+                    <button class="btn mt-4 bg-purple-600 hover:bg-purple-700" onclick="getNewRandomBodyPart()">Obter Nova Parte do Corpo</button>
+                </section>
+
+                <!-- Info and Quiz Panel -->
+                <section class="card info-panel p-6">
+                    <h2 class="text-2xl font-bold text-blue-700 mb-4">Informações da Parte do Corpo e Dor</h2>
+
+                    <div id="selected-body-part-display-activity" class="mb-4">
+                        <p class="text-lg font-semibold text-gray-700">Parte do Corpo Selecionada: <span id="selected-body-part-name-activity" class="text-blue-600">Nenhuma</span></p>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="bodyPartInput-activity">Identifique a Parte do Corpo (Inglês):</label>
+                        <input type="text" id="bodyPartInput-activity" placeholder="Ex: Head">
+                        <button class="btn w-full mt-2" onclick="checkBodyPartName()">Verificar Nome</button>
+                        <p id="body-part-feedback-activity" class="feedback-message"></p>
+                        <button class="btn w-full mt-2 bg-gray-500 hover:bg-gray-700" onclick="revealBodyPartName()">Revelar Nome</button>
+                    </div>
+
+                    <div class="input-group mt-6">
+                        <label for="painTypeSelect-activity">Cenário de Dor:</label>
+                        <p id="pain-scenario-display-activity" class="text-gray-800 font-medium mb-2">Clique em "Obter Novo Cenário de Dor" para começar.</p>
+                        <select id="painTypeSelect-activity">
+                            <option value="">-- Selecione o Tipo de Dor --</option>
+                            <option value="Sharp">Sharp (Aguda)</option>
+                            <option value="Dull">Dull (Surda)</option>
+                            <option value="Aching">Aching (Latejante)</option>
+                            <option value="Throbbing">Throbbing (Pulsante)</option>
+                            <option value="Stabbing">Stabbing (Pontada)</option>
+                            <option value="Burning">Burning (Queimação)</option>
+                            <option value="Numbness">Numbness (Dormência)</option>
+                            <option value="Tingling">Tingling (Formigamento)</option>
+                        </select>
+                        <button class="btn w-full mt-2" onclick="checkPainType()">Verificar Dor</button>
+                        <p id="pain-type-feedback-activity" class="feedback-message"></p>
+                        <button class="btn w-full mt-2 bg-purple-600 hover:bg-purple-700" onclick="generatePainScenario()">Obter Novo Cenário de Dor</button>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <button class="btn flex-1 min-w-[150px]" onclick="getGeminiInfo('bodyPart')">✨ Obter Info da Parte do Corpo (IA) ✨</button>
+                        <button class="btn flex-1 min-w-[150px]" onclick="getGeminiInfo('painType')">✨ Obter Info do Tipo de Dor (IA) ✨</button>
+                    </div>
+                    <div id="ai-info-display-activity" class="detailed-ai-info hidden mt-4"></div>
+
+                    <div class="pronunciation-controls mt-6">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Prática de Pronúncia</h3>
+                        <button class="btn" onclick="playCurrentNameAudio()" id="play-audio-btn-activity" disabled>🔊 Reproduzir Nome</button>
+                        <button class="btn" onclick="startRecording()" id="start-record-btn-activity" disabled>🎤 Iniciar Gravação</button>
+                        <button class="btn" onclick="stopRecording()" id="stop-record-btn-activity" disabled>⏹️ Parar Gravação</button>
+                        <button class="btn" onclick="playRecordedAudio()" id="play-recorded-audio-btn-activity" disabled>▶️ Reproduzir Sua Gravação</button>
+                        <p id="recording-status-activity" class="status-message"></p>
+                    </div>
+
+                    <div class="mt-6 text-center">
+                        <p class="text-xl font-bold">Pontuação: <span id="score-activity">0</span></p>
+                        <button class="btn bg-green-600 hover:bg-green-700 mt-4" onclick="resetActivity()">Reiniciar Atividade</button>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+
+        <!-- Conclusion -->
+        <div class="card text-center mt-10">
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">Continue em Frente! 🚀</h2>
+            <p class="description mb-4">
+                Esperamos que esta masterclass tenha fornecido insights valiosos sobre o mundo dos exercícios de academia, máquinas e diversos esportes. Lembre-se, a consistência é fundamental, e entender suas ferramentas é o primeiro passo para alcançar seus objetivos de fitness.
+            </p>
+            <p class="description">
+                Mantenha-se ativo(a), mantenha-se saudável, e esperamos ver seu progresso! Sua jornada para uma versão mais forte e em forma de você começa agora. ✨
+            </p>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Criado por Daby @2025</p>
+    </footer>
+
+    <script>
+        // Gym Masterclass specific functions
+        /**
+         * Plays the given text aloud using the Web Speech API.
+         * @param {string} text - The English text to be spoken.
+         */
+        function playAudio(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'en-US'; // Set language to English (United States)
+                speechSynthesis.speak(utterance);
+            } else {
+                console.warn('Web Speech API is not supported in this browser.');
+            }
+        }
+
+        /**
+         * Normalizes a string to be used as a valid HTML ID.
+         * @param {string} str - The input string.
+         * @returns {string} - The normalized ID.
+         */
+        function normalizeId(str) {
+            // Remove special characters, replace spaces with hyphens, convert to lowercase
+            return str.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-');
+        }
+
+        /**
+         * Generates and displays detailed information about a gym item using the Gemini API.
+         * @param {string} itemName - The name of the item (e.g., "Squash", "Treadmill").
+         * @param {HTMLElement} clickedButton - The button that was clicked to trigger this function.
+         */
+        async function getDetailedInfo(itemName, clickedButton) {
+            const itemId = normalizeId(itemName);
+            const infoDiv = document.getElementById(`info-${itemId}`);
+
+            if (!infoDiv) {
+                console.error(`Could not find info div for item: ${itemName}. Expected ID: info-${itemId}`);
+                return;
+            }
+
+            // Toggle visibility
+            if (!infoDiv.classList.contains('hidden') && infoDiv.innerHTML.includes('Informações Detalhadas:')) {
+                infoDiv.classList.add('hidden');
+                return;
+            }
+
+            infoDiv.classList.remove('hidden'); // Show the info div
+            infoDiv.innerHTML = '<div class="loading-spinner"></div> Carregando informações detalhadas...';
+
+            try {
+                const prompt = `Provide a detailed explanation of ${itemName}, including its benefits and how it's typically performed. Keep the explanation concise, around 3-5 sentences.`;
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // Canvas will automatically provide this in runtime
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    infoDiv.innerHTML = `
+                        <strong>Informações Detalhadas:</strong> ${text}
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "${itemName}"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, '${itemId}')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, '${itemId}')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('${itemId}')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-${itemId}" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    `;
+                } else {
+                    infoDiv.innerHTML = 'Falha ao recuperar informações detalhadas. Por favor, tente novamente.';
+                    console.error('Gemini API response structure unexpected:', result);
+                }
+            } catch (error) {
+                infoDiv.innerHTML = 'Ocorreu um erro ao buscar informações. Por favor, verifique sua conexão de rede.';
+                console.error('Error calling Gemini API:', error);
+            }
+        }
+
+        let mediaRecorderGym;
+        let audioChunksGym = [];
+        let recordedAudioBlobGym = null;
+        let currentRecordingStatusDivGym = null;
+
+        /**
+         * Starts audio recording for Gym Masterclass items.
+         * @param {HTMLElement} button - The button that triggered the recording.
+         * @param {string} itemId - The ID of the item being recorded for.
+         */
+        async function startRecordingGym(button, itemId) {
+            currentRecordingStatusDivGym = document.getElementById(`recording-status-gym-${itemId}`);
+            audioChunksGym = [];
+            recordedAudioBlobGym = null;
+
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                mediaRecorderGym = new MediaRecorder(stream);
+                mediaRecorderGym.ondataavailable = event => {
+                    audioChunksGym.push(event.data);
+                };
+                mediaRecorderGym.onstop = () => {
+                    recordedAudioBlobGym = new Blob(audioChunksGym, { type: 'audio/webm' });
+                    currentRecordingStatusDivGym.innerText = 'Gravação parada. Pronto para reproduzir.';
+                    document.querySelector(`#info-${itemId} .record-btn:nth-of-type(3)`).disabled = false; // Enable play button
+                    stream.getTracks().forEach(track => track.stop()); // Stop microphone access
+                };
+
+                mediaRecorderGym.start();
+                currentRecordingStatusDivGym.innerText = 'Gravando... Diga algo!';
+                button.disabled = true;
+                document.querySelector(`#info-${itemId} .record-btn:nth-of-type(2)`).disabled = false; // Enable stop button
+                document.querySelector(`#info-${itemId} .record-btn:nth-of-type(3)`).disabled = true; // Disable play button
+            } catch (err) {
+                currentRecordingStatusDivGym.innerText = 'Acesso ao microfone negado ou ocorreu um erro.';
+                console.error('Error accessing microphone:', err);
+            }
+        }
+
+        /**
+         * Stops audio recording for Gym Masterclass items.
+         * @param {HTMLElement} button - The button that triggered stopping.
+         * @param {string} itemId - The ID of the item the recording is for.
+         */
+        function stopRecordingGym(button, itemId) {
+            if (mediaRecorderGym && mediaRecorderGym.state === 'recording') {
+                mediaRecorderGym.stop();
+                button.disabled = true;
+                document.querySelector(`#info-${itemId} .record-btn:nth-of-type(1)`).disabled = false; // Enable start button
+            }
+        }
+
+        /**
+         * Plays the recorded audio for Gym Masterclass items.
+         * @param {string} itemId - The ID of the item the recording is for.
+         */
+        function playRecordedAudioGym(itemId) {
+            if (recordedAudioBlobGym) {
+                const audioUrl = URL.createObjectURL(recordedAudioBlobGym);
+                const audio = new Audio(audioUrl);
+                audio.play();
+                currentRecordingStatusDivGym.innerText = 'Reproduzindo sua gravação...';
+                audio.onended = () => {
+                    currentRecordingStatusDivGym.innerText = 'Gravação reproduzida.';
+                };
+            } else {
+                currentRecordingStatusDivGym.innerText = 'Nenhuma gravação disponível.';
+            }
+        }
+
+        /**
+         * Marks an item as learned.
+         * @param {HTMLElement} button - The "Mark as Learned" button.
+         */
+        function markAsLearned(button) {
+            button.classList.toggle('learned');
+            if (button.classList.contains('learned')) {
+                button.innerText = 'Aprendido! ✅';
+                // In a real app, you'd save this state to a database or local storage
+            } else {
+                button.innerText = 'Marcar como Aprendido ✅';
+            }
+        }
+
+        /**
+         * Filters the displayed cards based on search input.
+         */
+        function filterCards() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const cardName = card.dataset.name ? card.dataset.name.toLowerCase() : '';
+                const englishDescription = card.querySelector('.description span[id$="-en"]')?.innerText.toLowerCase() || '';
+                const portugueseDescription = card.querySelector('.description strong:nth-of-type(2)')?.nextSibling?.textContent.toLowerCase() || '';
+                const musclesWorked = card.querySelector('.description strong:nth-of-type(3)')?.nextSibling?.textContent.toLowerCase() || '';
+                const equipmentUsed = card.querySelector('.description strong:nth-of-type(4)')?.nextSibling?.textContent.toLowerCase() || '';
+
+
+                if (cardName.includes(searchTerm) || englishDescription.includes(searchTerm) || portugueseDescription.includes(searchTerm) || musclesWorked.includes(searchTerm) || equipmentUsed.includes(searchTerm)) {
+                    card.style.display = 'flex'; // Show card
+                } else {
+                    card.style.display = 'none'; // Hide card
+                }
+            });
+        }
+
+
+        // Human Body Activity specific functions and data
+        const bodyPartsActivity = {
+            "head-activity": { en: "Head", pt: "Cabeça" },
+            "neck-activity": { en: "Neck", pt: "Pescoço" },
+            "chest-activity": { en: "Chest", pt: "Peito" },
+            "abdomen-activity": { en: "Abdomen", pt: "Abdômen" },
+            "left-shoulder-activity": { en: "Left Shoulder", pt: "Ombro Esquerdo" },
+            "right-shoulder-activity": { en: "Right Shoulder", pt: "Ombro Direito" },
+            "left-arm-activity": { en: "Left Arm", pt: "Braço Esquerdo" },
+            "right-arm-activity": { en: "Right Arm", pt: "Braço Direito" },
+            "left-hand-activity": { en: "Left Hand", pt: "Mão Esquerda" },
+            "right-hand-activity": { en: "Right Hand", pt: "Mão Direita" },
+            "hips-activity": { en: "Hips", pt: "Quadris" },
+            "left-leg-activity": { en: "Left Leg", pt: "Perna Esquerda" },
+            "right-leg-activity": { en: "Right Leg", pt: "Perna Direita" },
+            "left-foot-activity": { en: "Left Foot", pt: "Pé Esquerdo" },
+            "right-foot-activity": { en: "Right Foot", pt: "Pé Direito" }
+        };
+
+        const painTypesActivity = {
+            "Sharp": { en: "Sharp", pt: "Aguda", scenario: "Você sente uma dor súbita, intensa e penetrante, como uma picada rápida ou um corte." },
+            "Dull": { en: "Dull", pt: "Surda", scenario: "Há uma dor constante e de baixo nível que não é muito intensa, mas é persistente." },
+            "Aching": { en: "Aching", pt: "Latejante", scenario: "Você tem uma dor contínua, pesada e desconfortável, muitas vezes profunda nos músculos ou articulações." },
+            "Throbbing": { en: "Throbbing", pt: "Pulsante", scenario: "A dor parece um batimento rítmico ou uma sensação pulsante, muitas vezes acompanhando seus batimentos cardíacos." },
+            "Stabbing": { en: "Stabbing", pt: "Pontada", scenario: "Uma dor súbita, muito aguda e severa, como se algo estivesse sendo empurrado para dentro de você." },
+            "Burning": { en: "Burning", pt: "Queimação", scenario: "A sensação é como brasas quentes ou fogo na sua pele ou dentro do seu corpo." },
+            "Numbness": { en: "Numbness", pt: "Dormência", scenario: "Você experimenta uma perda de sensação, uma sensação de que uma parte do seu corpo está 'adormecida'." },
+            "Tingling": { en: "Tingling", pt: "Formigamento", scenario: "Uma sensação de picadas ou 'alfinetes e agulhas', muitas vezes acompanhada de dormência parcial." }
+        };
+
+        let selectedBodyPartIdActivity = null;
+        let currentBodyPartElementActivity = null; // Store the currently highlighted SVG element
+        let currentPainScenarioTypeActivity = null; // Stores the correct pain type for the current scenario
+        let scoreActivity = 0;
+
+        // Audio recording variables for activity
+        let mediaRecorderActivity;
+        let audioChunksActivity = [];
+        let recordedAudioBlobActivity = null;
+
+        // DOM elements for activity
+        const bodyPartInputActivity = document.getElementById('bodyPartInput-activity');
+        const painTypeSelectActivity = document.getElementById('painTypeSelect-activity');
+        const selectedBodyPartNameDisplayActivity = document.getElementById('selected-body-part-name-activity');
+        const bodyPartFeedbackActivity = document.getElementById('body-part-feedback-activity');
+        const painTypeFeedbackActivity = document.getElementById('pain-type-feedback-activity');
+        const scoreDisplayActivity = document.getElementById('score-activity');
+        const aiInfoDisplayActivity = document.getElementById('ai-info-display-activity');
+        const playAudioBtnActivity = document.getElementById('play-audio-btn-activity');
+        const startRecordBtnActivity = document.getElementById('start-record-btn-activity');
+        const stopRecordBtnActivity = document.getElementById('stop-record-btn-activity');
+        const playRecordedAudioBtnActivity = document.getElementById('play-recorded-audio-btn-activity');
+        const recordingStatusActivity = document.getElementById('recording-status-activity');
+        const painScenarioDisplayActivity = document.getElementById('pain-scenario-display-activity');
+
+        /**
+         * Initializes the activity by adding event listeners to body parts.
+         */
+        document.querySelectorAll('.body-outline-svg path, .body-outline-svg rect, .body-outline-svg circle').forEach(part => {
+            part.addEventListener('click', () => selectBodyPartActivity(part));
+        });
+
+        /**
+         * Selects a body part, updates display, and enables relevant buttons.
+         * @param {HTMLElement} part - The SVG element representing the body part.
+         */
+        function selectBodyPartActivity(part) {
+            // Remove 'selected' and 'highlight' class from previously selected part
+            const currentSelected = document.querySelector('.body-outline-svg .selected');
+            if (currentSelected) {
+                currentSelected.classList.remove('selected');
+            }
+            if (currentBodyPartElementActivity) {
+                currentBodyPartElementActivity.classList.remove('highlight');
+            }
+
+            // Add 'selected' class to the new part
+            part.classList.add('selected');
+            currentBodyPartElementActivity = part; // Store the element
+            selectedBodyPartIdActivity = part.id;
+            const bodyPartNameEn = bodyPartsActivity[selectedBodyPartIdActivity].en;
+            const bodyPartNamePt = bodyPartsActivity[selectedBodyPartIdActivity].pt;
+
+            selectedBodyPartNameDisplayActivity.innerText = `${bodyPartNameEn} (${bodyPartNamePt})`;
+            bodyPartInputActivity.value = ''; // Clear previous input
+            bodyPartFeedbackActivity.innerText = 'Agora, digite o nome em inglês acima.'; // Clear feedback and guide
+            bodyPartFeedbackActivity.className = 'feedback-message'; // Neutral feedback
+            aiInfoDisplayActivity.classList.add('hidden'); // Hide previous AI info
+            aiInfoDisplayActivity.innerHTML = ''; // Clear previous AI info
+
+            // Enable pronunciation buttons
+            playAudioBtnActivity.disabled = false;
+            startRecordBtnActivity.disabled = false;
+            stopRecordBtnActivity.disabled = true;
+            playRecordedAudioBtnActivity.disabled = true;
+            recordingStatusActivity.innerText = '';
+            recordedAudioBlobActivity = null; // Reset recorded audio
+        }
+
+        /**
+         * Randomly selects and highlights a new body part for the user to identify.
+         */
+        function getNewRandomBodyPart() {
+            const allBodyPartIds = Object.keys(bodyPartsActivity);
+            const randomIndex = Math.floor(Math.random() * allBodyPartIds.length);
+            const randomBodyPartId = allBodyPartIds[randomIndex];
+            const randomBodyPartElement = document.getElementById(randomBodyPartId);
+
+            // Clear previous highlight and selection
+            const currentSelected = document.querySelector('.body-outline-svg .selected');
+            if (currentSelected) {
+                currentSelected.classList.remove('selected');
+            }
+            if (currentBodyPartElementActivity) {
+                currentBodyPartElementActivity.classList.remove('highlight');
+            }
+
+            // Highlight the new random part
+            randomBodyPartElement.classList.add('highlight');
+            currentBodyPartElementActivity = randomBodyPartElement; // Store the highlighted element
+
+            selectedBodyPartIdActivity = randomBodyPartId;
+            selectedBodyPartNameDisplayActivity.innerText = `Adivinhe a parte destacada!`;
+            bodyPartInputActivity.value = '';
+            bodyPartFeedbackActivity.innerText = 'Uma nova parte do corpo foi destacada. Digite o nome em inglês!';
+            bodyPartFeedbackActivity.className = 'feedback-message';
+            aiInfoDisplayActivity.classList.add('hidden');
+            aiInfoDisplayActivity.innerHTML = '';
+
+            // Enable pronunciation buttons for the *new* part
+            playAudioBtnActivity.disabled = false;
+            startRecordBtnActivity.disabled = false;
+            stopRecordBtnActivity.disabled = true;
+            playRecordedAudioBtnActivity.disabled = true;
+            recordingStatusActivity.innerText = '';
+            recordedAudioBlobActivity = null;
+        }
+
+
+        /**
+         * Checks if the user's input for the body part name is correct.
+         */
+        function checkBodyPartName() {
+            if (!selectedBodyPartIdActivity) {
+                bodyPartFeedbackActivity.innerText = 'Por favor, selecione ou obtenha uma parte do corpo primeiro!';
+                bodyPartFeedbackActivity.className = 'feedback-message feedback-incorrect';
+                return;
+            }
+
+            const correctNameEn = bodyPartsActivity[selectedBodyPartIdActivity].en.toLowerCase();
+            const userInput = bodyPartInputActivity.value.trim().toLowerCase();
+
+            if (userInput === correctNameEn) {
+                bodyPartFeedbackActivity.innerText = `🎉 Correto! É a ${bodyPartsActivity[selectedBodyPartIdActivity].en}.`;
+                bodyPartFeedbackActivity.className = 'feedback-message feedback-correct';
+                updateScoreActivity(1);
+                // Remove highlight after correct answer
+                if (currentBodyPartElementActivity) {
+                    currentBodyPartElementActivity.classList.remove('highlight');
+                }
+            } else {
+                bodyPartFeedbackActivity.innerText = `❌ Incorreto. Tente novamente!`;
+                bodyPartFeedbackActivity.className = 'feedback-message feedback-incorrect';
+                updateScoreActivity(-0.5); // Deduct half a point for incorrect answers
+            }
+        }
+
+        /**
+         * Reveals the correct English name of the selected body part.
+         */
+        function revealBodyPartName() {
+            if (!selectedBodyPartIdActivity) {
+                bodyPartFeedbackActivity.innerText = 'Por favor, selecione ou obtenha uma parte do corpo primeiro!';
+                bodyPartFeedbackActivity.className = 'feedback-message feedback-incorrect';
+                return;
+            }
+            bodyPartInputActivity.value = bodyPartsActivity[selectedBodyPartIdActivity].en;
+            bodyPartFeedbackActivity.innerText = `💡 O nome correto é: ${bodyPartsActivity[selectedBodyPartIdActivity].en}`;
+            bodyPartFeedbackActivity.className = 'feedback-message'; // Neutral feedback
+            updateScoreActivity(-0.25); // Deduct a small amount for revealing
+            // Remove highlight after revealing
+            if (currentBodyPartElementActivity) {
+                currentBodyPartElementActivity.classList.remove('highlight');
+            }
+        }
+
+        /**
+         * Generates a new pain scenario and sets the correct answer.
+         */
+        function generatePainScenario() {
+            const painTypeKeys = Object.keys(painTypesActivity);
+            const randomIndex = Math.floor(Math.random() * painTypeKeys.length);
+            currentPainScenarioTypeActivity = painTypeKeys[randomIndex];
+            painScenarioDisplayActivity.innerText = `Cenário: ${painTypesActivity[currentPainScenarioTypeActivity].scenario} Que tipo de dor é esta?`;
+            painTypeSelectActivity.value = ""; // Reset dropdown
+            painTypeFeedbackActivity.innerText = 'Selecione a melhor opção no menu suspenso.';
+            painTypeFeedbackActivity.className = 'feedback-message';
+            aiInfoDisplayActivity.classList.add('hidden');
+            aiInfoDisplayActivity.innerHTML = '';
+        }
+
+        /**
+         * Checks if the selected pain type matches the current scenario's correct type.
+         */
+        function checkPainType() {
+            const selectedPain = painTypeSelectActivity.value;
+            if (!selectedPain) {
+                painTypeFeedbackActivity.innerText = 'Por favor, selecione um tipo de dor!';
+                painTypeFeedbackActivity.className = 'feedback-message feedback-incorrect';
+                return;
+            }
+
+            if (!currentPainScenarioTypeActivity) {
+                painTypeFeedbackActivity.innerText = 'Por favor, obtenha um cenário de dor primeiro!';
+                painTypeFeedbackActivity.className = 'feedback-message feedback-incorrect';
+                return;
+            }
+
+            if (selectedPain === currentPainScenarioTypeActivity) {
+                painTypeFeedbackActivity.innerText = `✅ Correto! Esta é uma dor ${painTypesActivity[currentPainScenarioTypeActivity].en}.`;
+                painTypeFeedbackActivity.className = 'feedback-message feedback-correct';
+                updateScoreActivity(1);
+            } else {
+                painTypeFeedbackActivity.innerText = `❌ Incorreto. Tente novamente!`;
+                painTypeFeedbackActivity.className = 'feedback-message feedback-incorrect';
+                updateScoreActivity(-0.5);
+            }
+        }
+
+        /**
+         * Updates the score and displays it.
+         * @param {number} change - The amount to change the score by.
+         */
+        function updateScoreActivity(change) {
+            scoreActivity += change;
+            if (scoreActivity < 0) scoreActivity = 0; // Prevent negative scores
+            scoreDisplayActivity.innerText = Math.round(scoreActivity);
+        }
+
+        /**
+         * Resets the activity to its initial state.
+         */
+        function resetActivity() {
+            const currentSelected = document.querySelector('.body-outline-svg .selected');
+            if (currentSelected) {
+                currentSelected.classList.remove('selected');
+            }
+            if (currentBodyPartElementActivity) {
+                currentBodyPartElementActivity.classList.remove('highlight');
+            }
+            selectedBodyPartIdActivity = null;
+            currentBodyPartElementActivity = null;
+            currentPainScenarioTypeActivity = null;
+
+            scoreActivity = 0;
+            scoreDisplayActivity.innerText = '0';
+            selectedBodyPartNameDisplayActivity.innerText = 'Nenhuma';
+            bodyPartInputActivity.value = '';
+            painTypeSelectActivity.value = '';
+            bodyPartFeedbackActivity.innerText = '';
+            painTypeFeedbackActivity.innerText = '';
+            painScenarioDisplayActivity.innerText = 'Clique em "Obter Novo Cenário de Dor" para começar.';
+            aiInfoDisplayActivity.classList.add('hidden');
+            aiInfoDisplayActivity.innerHTML = '';
+
+            // Disable pronunciation buttons
+            playAudioBtnActivity.disabled = true;
+            startRecordBtnActivity.disabled = true;
+            stopRecordBtnActivity.disabled = true;
+            playRecordedAudioBtnActivity.disabled = true;
+            recordingStatusActivity.innerText = '';
+            recordedAudioBlobActivity = null;
+        }
+
+        /**
+         * Calls the Gemini API to get detailed information.
+         * @param {string} type - 'bodyPart' or 'painType'.
+         */
+        async function getGeminiInfo(type) {
+            aiInfoDisplayActivity.classList.remove('hidden');
+            aiInfoDisplayActivity.innerHTML = '<div class="loading-spinner"></div> Carregando informações...';
+
+            let prompt = '';
+            if (type === 'bodyPart' && selectedBodyPartIdActivity) {
+                const nameEn = bodyPartsActivity[selectedBodyPartIdActivity].en;
+                prompt = `Provide a concise explanation of the human body part "${nameEn}", its main function, and 2-3 common types of pain associated with it.`;
+            } else if (type === 'painType' && painTypeSelectActivity.value) {
+                const selectedPain = painTypeSelectActivity.value;
+                prompt = `Describe the sensation of "${selectedPain}" pain and provide 1-2 common causes or conditions that might lead to it.`;
+            } else {
+                aiInfoDisplayActivity.innerHTML = 'Por favor, selecione uma parte do corpo ou tipo de dor primeiro para obter informações da IA.';
+                return;
+            }
+
+            try {
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // Canvas will automatically provide this in runtime
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    aiInfoDisplayActivity.innerHTML = `<strong>Informações da IA:</strong> ${text}`;
+                } else {
+                    aiInfoDisplayActivity.innerHTML = 'Falha ao recuperar informações da IA. Por favor, tente novamente.';
+                    console.error('Gemini API response structure unexpected:', result);
+                }
+            } catch (error) {
+                aiInfoDisplayActivity.innerHTML = 'Ocorreu um erro ao buscar informações da IA. Por favor, verifique sua conexão de rede.';
+                console.error('Error calling Gemini API:', error);
+            }
+        }
+
+        /**
+         * Plays the English name of the currently selected body part.
+         */
+        function playCurrentNameAudio() {
+            if (selectedBodyPartIdActivity && 'speechSynthesis' in window) {
+                const nameEn = bodyPartsActivity[selectedBodyPartIdActivity].en;
+                const utterance = new SpeechSynthesisUtterance(nameEn);
+                utterance.lang = 'en-US';
+                speechSynthesis.speak(utterance);
+            } else {
+                console.warn('Síntese de fala não suportada ou nenhuma parte do corpo selecionada.');
+            }
+        }
+
+        /**
+         * Starts audio recording for pronunciation practice.
+         */
+        async function startRecording() {
+            audioChunksActivity = [];
+            recordedAudioBlobActivity = null;
+            recordingStatusActivity.innerText = '';
+
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                mediaRecorderActivity = new MediaRecorder(stream);
+                mediaRecorderActivity.ondataavailable = event => {
+                    audioChunksActivity.push(event.data);
+                };
+                mediaRecorderActivity.onstop = () => {
+                    recordedAudioBlobActivity = new Blob(audioChunksActivity, { type: 'audio/webm' });
+                    recordingStatusActivity.innerText = 'Gravação parada. Pronto para reproduzir.';
+                    playRecordedAudioBtnActivity.disabled = false;
+                    stream.getTracks().forEach(track => track.stop()); // Stop microphone access
+                };
+
+                mediaRecorderActivity.start();
+                recordingStatusActivity.innerText = 'Gravando... Diga o nome da parte do corpo!';
+                startRecordBtnActivity.disabled = true;
+                stopRecordBtnActivity.disabled = false;
+                playRecordedAudioBtnActivity.disabled = true;
+            } catch (err) {
+                recordingStatusActivity.innerText = 'Acesso ao microfone negado ou ocorreu um erro.';
+                console.error('Error accessing microphone:', err);
+            }
+        }
+
+        /**
+         * Stops audio recording.
+         */
+        function stopRecording() {
+            if (mediaRecorderActivity && mediaRecorderActivity.state === 'recording') {
+                mediaRecorderActivity.stop();
+                stopRecordBtnActivity.disabled = true;
+                startRecordBtnActivity.disabled = false;
+            }
+        }
+
+        /**
+         * Plays the recorded audio.
+         */
+        function playRecordedAudio() {
+            if (recordedAudioBlobActivity) {
+                const audioUrl = URL.createObjectURL(recordedAudioBlobActivity);
+                const audio = new Audio(audioUrl);
+                audio.play();
+                recordingStatusActivity.innerText = 'Reproduzindo sua gravação...';
+                audio.onended = () => {
+                    recordingStatusActivity.innerText = 'Gravação reproduzida.';
+                };
+            } else {
+                recordingStatusActivity.innerText = 'Nenhuma gravação disponível.';
+            }
+        }
+
+        // Initial state setup for both parts of the website
+        document.addEventListener('DOMContentLoaded', () => {
+            // Show instructions for the activity on load
+            document.getElementById('how-to-play-activity').style.display = 'block';
+            resetActivity(); // Reset the human body activity
+        });
+    </script>
+</body>
+</html>
