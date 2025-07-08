@@ -549,7 +549,6 @@
                     <h3 class="item-title">
                         <span class="emoji">🏸</span> Squash
                         <button class="play-audio-btn" onclick="playAudio('Squash')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Squash', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-squash-en">A fast-paced racket sport played by two or four players in a four-walled court, demanding agility and quick reflexes.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-squash-en').innerText)">🔊</button>
@@ -558,14 +557,25 @@
                         <br>
                         <strong>Benefícios:</strong> Melhora a agilidade, reflexos, coordenação e resistência cardiovascular.
                     </p>
-                    <div id="info-squash" class="detailed-info hidden"></div>
+                    <div id="info-squash" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O Squash é um esporte dinâmico que proporciona um treino cardiovascular intenso e melhora a coordenação olho-mão. É jogado em uma quadra fechada, onde os jogadores usam raquetes para bater uma pequena bola de borracha contra as paredes. A natureza de alta velocidade do jogo exige movimentos rápidos, mudanças de direção e reflexos apurados, tornando-o excelente para a aptidão geral e agilidade.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Squash"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'squash')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'squash')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('squash')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-squash" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Tennis -->
                 <div class="card" data-name="Tennis">
                     <h3 class="item-title">
                         <span class="emoji">🎾</span> Tênis
                         <button class="play-audio-btn" onclick="playAudio('Tennis')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Tennis', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-tennis-en">A racket sport played on a court with a net, where players hit a ball over the net into the opponent's court, requiring precision and endurance.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-tennis-en').innerText)">🔊</button>
@@ -574,14 +584,25 @@
                         <br>
                         <strong>Benefícios:</strong> Desenvolve a coordenação olho-mão, agilidade, estratégia e resistência.
                     </p>
-                    <div id="info-tennis" class="detailed-info hidden"></div>
+                    <div id="info-tennis" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O Tênis é um esporte de raquete amplamente popular que melhora a agilidade, a coordenação e a resistência. Jogado em uma quadra dividida por uma rede, os jogadores usam raquetes para golpear uma bola sobre a rede, visando que ela caia dentro dos limites da quadra do adversário. Exige precisão, estratégia e movimentos rápidos, sendo um excelente exercício para todo o corpo.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Tennis"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'tennis')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'tennis')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('tennis')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-tennis" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Football (Soccer) -->
                 <div class="card" data-name="Football Soccer">
                     <h3 class="item-title">
                         <span class="emoji">⚽</span> Futebol
                         <button class="play-audio-btn" onclick="playAudio('Football or Soccer')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Football (Soccer)', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-football-en">A team sport played with a ball between two teams of 11 players, primarily using their feet to propel the ball towards the opponent's goal.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-football-en').innerText)">🔊</button>
@@ -590,14 +611,25 @@
                         <br>
                         <strong>Benefícios:</strong> Melhora o condicionamento cardiovascular, trabalho em equipe, coordenação e agilidade.
                     </p>
-                    <div id="info-football-soccer" class="detailed-info hidden"></div>
+                    <div id="info-football-soccer" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O Futebol (Soccer) é o esporte mais popular do mundo, focado no trabalho em equipe e na resistência cardiovascular. Duas equipes de 11 jogadores tentam marcar gols usando os pés para controlar e chutar a bola em direção ao gol adversário. Desenvolve a agilidade, a coordenação motora e a capacidade de tomada de decisão rápida.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Football Soccer"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'football-soccer')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'football-soccer')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('football-soccer')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-football-soccer" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Futsal -->
                 <div class="card" data-name="Futsal">
                     <h3 class="item-title">
                         <span class="emoji">🥅</span> Futsal
                         <button class="play-audio-btn" onclick="playAudio('Futsal')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Futsal', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-futsal-en">A variant of association football played on a smaller hard court, primarily indoors, emphasizing quick passes and close control.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-futsal-en').innerText)">🔊</button>
@@ -606,14 +638,25 @@
                         <br>
                         <strong>Benefícios:</strong> Aprimora a velocidade, técnica com a bola, agilidade e tomada de decisão rápida.
                     </p>
-                    <div id="info-futsal" class="detailed-info hidden"></div>
+                    <div id="info-futsal" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O Futsal é uma variação do futebol jogada em quadras menores, geralmente indoor, com regras que promovem um jogo mais rápido e técnico. Enfatiza o controle de bola, passes curtos e movimentos ágeis. É excelente para aprimorar a técnica individual, a velocidade de raciocínio e a coordenação em espaços confinados.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Futsal"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'futsal')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'futsal')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('futsal')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-futsal" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Rugby -->
                 <div class="card" data-name="Rugby">
                     <h3 class="item-title">
                         <span class="emoji">🏉</span> Rugby
                         <button class="play-audio-btn" onclick="playAudio('Rugby')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Rugby', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-rugby-en">A team sport played with an oval ball, involving running with the ball, passing, and tackling, known for its physical demands.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-rugby-en').innerText)">🔊</button>
@@ -622,14 +665,25 @@
                         <br>
                         <strong>Benefícios:</strong> Desenvolve força, resistência, trabalho em equipe e resiliência física.
                     </p>
-                    <div id="info-rugby" class="detailed-info hidden"></div>
+                    <div id="info-rugby" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O Rugby é um esporte de contato físico intenso que exige força, resistência e trabalho em equipe. Os jogadores avançam com uma bola oval, passando-a para trás, e tentam marcar pontos colocando-a no chão na área de meta adversária ou chutando-a entre as traves. É conhecido por desenvolver a disciplina, a resiliência e o espírito de equipe.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Rugby"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'rugby')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'rugby')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('rugby')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-rugby" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Handball -->
                 <div class="card" data-name="Handball">
                     <h3 class="item-title">
                         <span class="emoji">🤾‍♀️</span> Handebol
                         <button class="play-audio-btn" onclick="playAudio('Handball')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Handball', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-handball-en">A team sport in which two teams of seven players pass a ball using their hands with the aim of throwing it into the goal of the other team, combining elements of soccer and basketball.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-handball-en').innerText)">🔊</button>
@@ -638,14 +692,25 @@
                         <br>
                         <strong>Benefícios:</strong> Aumenta a coordenação motora, agilidade, força de arremesso e raciocínio tático.
                     </p>
-                    <div id="info-handball" class="detailed-info hidden"></div>
+                    <div id="info-handball" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O Handebol é um esporte de equipe rápido e dinâmico, jogado com as mãos, que combina elementos de futebol e basquete. O objetivo é lançar a bola no gol adversário. Exige agilidade, coordenação olho-mão, força de arremesso e raciocínio tático rápido, sendo um ótimo treino cardiovascular e de força.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Handball"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'handball')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'handball')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('handball')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-handball" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Play Marble -->
                 <div class="card" data-name="Play Marble">
                     <h3 class="item-title">
                         <span class="emoji">⚪</span> Bolinha de Gude
                         <button class="play-audio-btn" onclick="playAudio('Play Marble')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Play Marble', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-play-marble-en">A traditional game played with small spherical marbles, often involving flicking them to hit others, promoting fine motor skills and strategy.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-play-marble-en').innerText)">🔊</button>
@@ -654,14 +719,25 @@
                         <br>
                         <strong>Benefícios:</strong> Desenvolve a coordenação motora fina, precisão e raciocínio estratégico.
                     </p>
-                    <div id="info-play-marble" class="detailed-info hidden"></div>
+                    <div id="info-play-marble" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> Bolinha de Gude é um jogo tradicional que, embora não seja um esporte de academia convencional, promove a coordenação motora fina, a precisão e o raciocínio estratégico. Os jogadores usam os dedos para arremessar pequenas esferas de vidro ou pedra, tentando acertar e coletar as bolinhas dos oponentes. É uma atividade lúdica que desenvolve habilidades motoras e de concentração.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Play Marble"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'play-marble')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'play-marble')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('play-marble')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-play-marble" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Yoga -->
                 <div class="card" data-name="Yoga">
                     <h3 class="item-title">
                         <span class="emoji">🧘‍♀️</span> Yoga
                         <button class="play-audio-btn" onclick="playAudio('Yoga')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Yoga', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-yoga-en">A spiritual and ascetic discipline, including breath control, simple meditation, and the adoption of specific bodily postures, widely practiced for health, relaxation, and flexibility.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-yoga-en').innerText)">🔊</button>
@@ -670,14 +746,25 @@
                         <br>
                         <strong>Benefícios:</strong> Melhora a flexibilidade, força, equilíbrio, bem-estar mental e redução do estresse.
                     </p>
-                    <div id="info-yoga" class="detailed-info hidden"></div>
+                    <div id="info-yoga" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> Yoga é uma prática milenar que combina posturas físicas (asanas), exercícios de respiração (pranayama) e meditação. É amplamente praticada para melhorar a flexibilidade, força, equilíbrio, bem-estar mental e reduzir o estresse. Ajuda a aumentar a consciência corporal e a promover a calma e a clareza mental.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Yoga"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'yoga')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'yoga')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('yoga')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-yoga" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- FitDance -->
                 <div class="card" data-name="FitDance">
                     <h3 class="item-title">
                         <span class="emoji">💃</span> FitDance
                         <button class="play-audio-btn" onclick="playAudio('FitDance')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('FitDance', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-fitdance-en">A Brazilian dance fitness program that combines various dance styles with aerobic exercises, designed to be fun and engaging.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-fitdance-en').innerText)">🔊</button>
@@ -686,14 +773,25 @@
                         <br>
                         <strong>Benefícios:</strong> Melhora o condicionamento cardiovascular, coordenação, ritmo e humor.
                     </p>
-                    <div id="info-fitdance" class="detailed-info hidden"></div>
+                    <div id="info-fitdance" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> FitDance é um programa de fitness brasileiro que utiliza coreografias de diversos ritmos musicais para criar um treino aeróbico divertido e envolvente. É uma excelente forma de melhorar o condicionamento cardiovascular, a coordenação motora, o ritmo e o humor, pois a dança libera endorfinas e reduz o estresse.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "FitDance"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'fitdance')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'fitdance')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('fitdance')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-fitdance" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Dancing -->
                 <div class="card" data-name="Dancing">
                     <h3 class="item-title">
                         <span class="emoji">🕺</span> Dança
                         <button class="play-audio-btn" onclick="playAudio('Dancing')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Dancing', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-dancing-en">Moving rhythmically to music, typically as a form of entertainment, expression, or exercise, offering a full-body workout.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-dancing-en').innerText)">🔊</button>
@@ -702,14 +800,25 @@
                         <br>
                         <strong>Benefícios:</strong> Melhora a coordenação, flexibilidade, ritmo, condicionamento cardiovascular e expressão corporal.
                     </p>
-                    <div id="info-dancing" class="detailed-info hidden"></div>
+                    <div id="info-dancing" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> A Dança, em suas diversas formas, é uma atividade física completa que melhora a coordenação, flexibilidade, ritmo e condicionamento cardiovascular. Além dos benefícios físicos, a dança é uma poderosa forma de expressão artística e pode contribuir significativamente para o bem-estar mental, reduzindo o estresse e aumentando a autoconfiança.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Dancing"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'dancing')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'dancing')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('dancing')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-dancing" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Ballet -->
                 <div class="card" data-name="Ballet">
                     <h3 class="item-title">
                         <span class="emoji">🩰</span> Balé
                         <button class="play-audio-btn" onclick="playAudio('Ballet')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Ballet', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-ballet-en">A classical dance form characterized by graceful, precise movements and elaborate formal gestures, building strength, flexibility, and discipline.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-ballet-en').innerText)">🔊</button>
@@ -718,14 +827,25 @@
                         <br>
                         <strong>Benefícios:</strong> Aumenta a força muscular, flexibilidade, postura, equilíbrio e disciplina.
                     </p>
-                    <div id="info-ballet" class="detailed-info hidden"></div>
+                    <div id="info-ballet" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O Balé é uma forma de dança clássica que exige extrema disciplina, força, flexibilidade e graça. Caracterizado por movimentos precisos e fluidos, o balé desenvolve a postura, o equilíbrio e a consciência corporal. É um treino rigoroso que fortalece o corpo inteiro, especialmente as pernas e o core, e aprimora a coordenação e a musicalidade.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Ballet"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'ballet')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'ballet')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('ballet')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-ballet" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Stretching -->
                 <div class="card" data-name="Stretching">
                     <h3 class="item-title">
                         <span class="emoji">🤸‍♂️</span> Alongamento
                         <button class="play-audio-btn" onclick="playAudio('Stretching')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Stretching', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-stretching-en">A form of physical exercise in which a specific muscle or tendon is deliberately stretched to improve the muscle's felt elasticity and achieve comfortable muscle tone, crucial for injury prevention.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-stretching-en').innerText)">🔊</button>
@@ -734,14 +854,25 @@
                         <br>
                         <strong>Benefícios:</strong> Aumenta a flexibilidade, amplitude de movimento, reduz o risco de lesões e alivia a tensão muscular.
                     </p>
-                    <div id="info-stretching" class="detailed-info hidden"></div>
+                    <div id="info-stretching" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O Alongamento é uma prática essencial para manter a flexibilidade muscular e a amplitude de movimento das articulações. Ajuda a prevenir lesões, aliviar a tensão muscular e melhorar a recuperação após o exercício. Pode ser feito antes ou depois do treino, ou como uma prática independente para promover o relaxamento e a saúde muscular.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Stretching"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'stretching')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'stretching')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('stretching')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-stretching" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Muay Thai -->
                 <div class="card" data-name="Muay Thai">
                     <h3 class="item-title">
                         <span class="emoji">🥊</span> Muay Thai
                         <button class="play-audio-btn" onclick="playAudio('Muay Thai')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Muay Thai', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-muay-thai-en">A combat sport of Thailand that uses stand-up striking along with various clinching techniques, known as the "Art of Eight Limbs."</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-muay-thai-en').innerText)">🔊</button>
@@ -750,14 +881,25 @@
                         <br>
                         <strong>Benefícios:</strong> Desenvolve força, resistência, disciplina, coordenação e habilidades de autodefesa.
                     </p>
-                    <div id="info-muay-thai" class="detailed-info hidden"></div>
+                    <div id="info-muay-thai" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> Muay Thai, ou Boxe Tailandês, é uma arte marcial e esporte de combate que utiliza golpes com punhos, cotovelos, joelhos e canelas. Conhecido como a "Arte das Oito Armas", é um treino de corpo inteiro que desenvolve força, resistência, disciplina, coordenação e habilidades de autodefesa. É um esporte altamente exigente fisicamente e mentalmente.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Muay Thai"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'muay-thai')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'muay-thai')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('muay-thai')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-muay-thai" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Spinning -->
                 <div class="card" data-name="Spinning">
                     <h3 class="item-title">
                         <span class="emoji">🚴‍♀️</span> Spinning
                         <button class="play-audio-btn" onclick="playAudio('Spinning')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Spinning', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-spinning-en">A high-intensity indoor cycling workout, typically performed in a group setting with an instructor, great for cardiovascular health.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-spinning-en').innerText)">🔊</button>
@@ -766,14 +908,25 @@
                         <br>
                         <strong>Benefícios:</strong> Melhora a saúde cardiovascular, resistência das pernas e queima de calorias.
                     </p>
-                    <div id="info-spinning" class="detailed-info hidden"></div>
+                    <div id="info-spinning" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> Spinning é uma aula de ciclismo indoor de alta intensidade, realizada em grupo com um instrutor que guia os participantes através de diferentes "terrenos" e ritmos. É excelente para a saúde cardiovascular, a resistência das pernas e a queima de calorias. É uma opção de baixo impacto para quem busca um treino aeróbico vigoroso.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Spinning"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'spinning')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'spinning')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('spinning')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-spinning" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Jump Class -->
                 <div class="card" data-name="Jump Class">
                     <h3 class="item-title">
                         <span class="emoji">🤸‍♀️</span> Aula de Jump
                         <button class="play-audio-btn" onclick="playAudio('Jump Class')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Jump Class', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-jump-class-en">A fitness class that involves jumping on individual trampolines, offering a low-impact cardio workout and improving coordination.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-jump-class-en').innerText)">🔊</button>
@@ -782,7 +935,19 @@
                         <br>
                         <strong>Benefícios:</strong> Exercício cardiovascular de baixo impacto, melhora a coordenação, equilíbrio e fortalece os músculos das pernas.
                     </p>
-                    <div id="info-jump-class" class="detailed-info hidden"></div>
+                    <div id="info-jump-class" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> A Aula de Jump é uma atividade aeróbica divertida e de alto gasto calórico, realizada em mini-trampolins individuais. Os movimentos de saltos e coreografias melhoram o condicionamento cardiovascular, a coordenação, o equilíbrio e fortalecem os músculos das pernas e do core. É uma opção de baixo impacto para as articulações, tornando-a acessível a muitos.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Jump Class"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'jump-class')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'jump-class')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('jump-class')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-jump-class" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -798,7 +963,6 @@
                     <h3 class="item-title">
                         <span class="emoji">🦵</span> Agachamento (Squats)
                         <button class="play-audio-btn" onclick="playAudio('Squats')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Squats', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-squats-en">Stand with feet shoulder-width apart, bend your knees and hips as if sitting down, targeting glutes, quads, and hamstrings.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-squats-en').innerText)">🔊</button>
@@ -808,14 +972,25 @@
                         <strong>Músculos trabalhados:</strong> Glúteos, Quadríceps, Isquiotibiais.
                         <strong>Equipamento:</strong> Peso corporal (Bodyweight) ou Halteres (Dumbbells).
                     </p>
-                    <div id="info-squats" class="detailed-info hidden"></div>
+                    <div id="info-squats" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O agachamento é um exercício fundamental que fortalece as pernas e os glúteos. É realizado flexionando os joelhos e quadris como se fosse sentar em uma cadeira, mantendo as costas retas. Pode ser feito com o peso corporal ou com halteres, sendo crucial para a força funcional e o desenvolvimento da parte inferior do corpo.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Squats"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'squats')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'squats')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('squats')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-squats" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Flexões (Push-ups) -->
                 <div class="card" data-name="Flexoes Push-ups">
                     <h3 class="item-title">
                         <span class="emoji">💪</span> Flexões (Push-ups)
                         <button class="play-audio-btn" onclick="playAudio('Push-ups')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Push-ups', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-push-ups-en">Place hands on the floor, keep your body straight, bend your arms to lower, and push up, working chest, shoulders, triceps, and core.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-push-ups-en').innerText)">🔊</button>
@@ -825,14 +1000,25 @@
                         <strong>Músculos trabalhados:</strong> Peito, Ombros (Deltóides), Tríceps, Core.
                         <strong>Equipamento:</strong> Peso corporal (Bodyweight).
                     </p>
-                    <div id="info-push-ups" class="detailed-info hidden"></div>
+                    <div id="info-push-ups" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> As flexões são um exercício clássico de peso corporal que trabalha o peito, ombros e tríceps, além de fortalecer o core. Realizadas deitando-se de bruços e empurrando o corpo para cima com os braços, mantendo o corpo reto. Existem variações para diferentes níveis de dificuldade, tornando-o acessível para iniciantes.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Push-ups"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'push-ups')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'push-ups')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('push-ups')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-push-ups" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Remada com halteres (Bent-over dumbbell rows) -->
                 <div class="card" data-name="Remada com halteres Bent-over dumbbell rows">
                     <h3 class="item-title">
                         <span class="emoji">🚣</span> Remada com Halteres (Bent-over dumbbell rows)
                         <button class="play-audio-btn" onclick="playAudio('Bent-over dumbbell rows')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Bent-over dumbbell rows', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-bent-over-dumbbell-rows-en">Lean forward at the torso, pull dumbbells towards your hips, keeping elbows close, engaging back and biceps.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-bent-over-dumbbell-rows-en').innerText)">🔊</button>
@@ -842,14 +1028,25 @@
                         <strong>Músculos trabalhados:</strong> Costas (Latíssimo do Dorso, Romboides), Bíceps.
                         <strong>Equipamento:</strong> Halteres (Dumbbells).
                     </p>
-                    <div id="info-bent-over-dumbbell-rows" class="detailed-info hidden"></div>
+                    <div id="info-bent-over-dumbbell-rows" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> A remada curvada com halteres é um exercício eficaz para fortalecer os músculos das costas e bíceps. Envolve inclinar o tronco à frente, mantendo as costas retas, e puxar os halteres em direção ao quadril, contraindo as omoplatas. É excelente para melhorar a postura e a força da parte superior das costas.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Bent-over dumbbell rows"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'bent-over-dumbbell-rows')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'bent-over-dumbbell-rows')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('bent-over-dumbbell-rows')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-bent-over-dumbbell-rows" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Prancha (Plank) -->
                 <div class="card" data-name="Prancha Plank">
                     <h3 class="item-title">
                         <span class="emoji">🧘</span> Prancha (Plank)
                         <button class="play-audio-btn" onclick="playAudio('Plank')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Plank', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-plank-en">Maintain a straight body supported on forearms and toes, contracting your core, excellent for core and shoulder stability.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-plank-en').innerText)">🔊</button>
@@ -859,14 +1056,25 @@
                         <strong>Músculos trabalhados:</strong> Core (Reto Abdominal, Oblíquos, Transverso do Abdômen), Ombros.
                         <strong>Equipamento:</strong> Peso corporal (Bodyweight).
                     </p>
-                    <div id="info-plank" class="detailed-info hidden"></div>
+                    <div id="info-plank" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> A prancha é um exercício isométrico que fortalece o core, ombros e glúteos. Consiste em manter o corpo reto e rígido, apoiado nos antebraços e pontas dos pés, como uma tábua. É fundamental para a estabilidade da coluna e para desenvolver a resistência dos músculos abdominais e lombares.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Plank"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'plank')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'plank')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('plank')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-plank" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Desenvolvimento de ombro com halteres (Dumbbell shoulder press) -->
                 <div class="card" data-name="Desenvolvimento de ombro com halteres Dumbbell shoulder press">
                     <h3 class="item-title">
                         <span class="emoji">⬆️</span> Desenvolvimento de Ombro com Halteres
                         <button class="play-audio-btn" onclick="playAudio('Dumbbell shoulder press')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Dumbbell shoulder press', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-dumbbell-shoulder-press-en">Push dumbbells upwards from shoulder height, keeping your core firm, targeting shoulders and triceps.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-dumbbell-shoulder-press-en').innerText)">🔊</button>
@@ -876,14 +1084,25 @@
                         <strong>Músculos trabalhados:</strong> Ombros (Deltóides), Tríceps.
                         <strong>Equipamento:</strong> Halteres (Dumbbells).
                     </p>
-                    <div id="info-dumbbell-shoulder-press" class="detailed-info hidden"></div>
+                    <div id="info-dumbbell-shoulder-press" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O desenvolvimento de ombro com halteres é um exercício que visa principalmente os ombros e tríceps. É realizado empurrando os halteres para cima a partir da altura dos ombros, acima da cabeça. Pode ser feito sentado ou em pé, sendo crucial para a força da parte superior do corpo e a saúde dos ombros.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Dumbbell shoulder press"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'dumbbell-shoulder-press')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'dumbbell-shoulder-press')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('dumbbell-shoulder-press')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-dumbbell-shoulder-press" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Avanço ou passada (Lunges) -->
                 <div class="card" data-name="Avanco Lunges">
                     <h3 class="item-title">
                         <span class="emoji">🚶‍♀️</span> Avanço ou Passada (Lunges)
                         <button class="play-audio-btn" onclick="playAudio('Lunges')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Lunges', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-lunges-en">Take a step forward and bend your knees to a 90° angle, then return, working quads, glutes, and hamstrings.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-lunges-en').innerText)">🔊</button>
@@ -893,7 +1112,19 @@
                         <strong>Músculos trabalhados:</strong> Quadríceps, Glúteos, Isquiotibiais.
                         <strong>Equipamento:</strong> Peso corporal (Bodyweight) ou Halteres (Dumbbells).
                     </p>
-                    <div id="info-lunges" class="detailed-info hidden"></div>
+                    <div id="info-lunges" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> Os avanços são um excelente exercício para as pernas e glúteos, melhorando também o equilíbrio e a coordenação. Envolve dar um passo à frente com uma perna e flexionar ambos os joelhos até formar um ângulo de 90 graus, depois retornar à posição inicial. Pode ser feito com peso corporal ou segurando halteres.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Lunges"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'lunges')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'lunges')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('lunges')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-lunges" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
             </div>
             <div class="info-box mt-8">
@@ -930,7 +1161,6 @@
                     <h3 class="item-title">
                         <span class="emoji">👨‍🏫</span> Personal Trainer
                         <button class="play-audio-btn" onclick="playAudio('Personal Trainer')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Personal Trainer', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-personal-trainer-en">A fitness professional who guides and motivates individuals through personalized exercise programs, ensuring proper form and maximizing results.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-personal-trainer-en').innerText)">🔊</button>
@@ -939,14 +1169,25 @@
                         <br>
                         <strong>Função:</strong> Orientação personalizada, motivação, correção de forma, desenvolvimento de planos de treino.
                     </p>
-                    <div id="info-personal-trainer" class="detailed-info hidden"></div>
+                    <div id="info-personal-trainer" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> Um Personal Trainer é um profissional de fitness qualificado que oferece orientação personalizada, motivação e planos de treino adaptados aos objetivos individuais. Eles garantem a execução correta dos exercícios, ajudam a prevenir lesões e maximizam os resultados, sendo um recurso valioso para quem busca um acompanhamento especializado.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Personal Trainer"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'personal-trainer')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'personal-trainer')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('personal-trainer')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-personal-trainer" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Drinking Fountain -->
                 <div class="card" data-name="Drinking Fountain">
                     <h3 class="item-title">
                         <span class="emoji">💧</span> Bebedouro
                         <button class="play-audio-btn" onclick="playAudio('Drinking Fountain')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Drinking Fountain', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-drinking-fountain-en">A public fixture that provides drinking water, essential for hydration during workouts and maintaining energy levels.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-drinking-fountain-en').innerText)">🔊</button>
@@ -955,14 +1196,25 @@
                         <br>
                         <strong>Função:</strong> Hidratação essencial durante e após o exercício.
                     </p>
-                    <div id="info-drinking-fountain" class="detailed-info hidden"></div>
+                    <div id="info-drinking-fountain" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O bebedouro é uma instalação essencial em qualquer academia, fornecendo acesso fácil à água potável. A hidratação adequada é crucial durante e após os treinos para manter os níveis de energia, regular a temperatura corporal e otimizar o desempenho e a recuperação.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Drinking Fountain"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'drinking-fountain')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'drinking-fountain')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('drinking-fountain')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-drinking-fountain" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Tatami -->
                 <div class="card" data-name="Tatami">
                     <h3 class="item-title">
                         <span class="emoji">🥋</span> Tatame
                         <button class="play-audio-btn" onclick="playAudio('Tatami')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Tatami', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-tatami-en">A type of mat used as a flooring material in martial arts dojos and yoga studios, providing cushioning for falls, throws, and comfortable practice.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-tatami-en').innerText)">🔊</button>
@@ -971,14 +1223,25 @@
                         <br>
                         <strong>Função:</strong> Amortecimento e segurança para práticas de artes marciais, yoga e alongamento.
                     </p>
-                    <div id="info-tatami" class="detailed-info hidden"></div>
+                    <div id="info-tatami" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O tatame é um tipo de piso acolchoado, comumente encontrado em academias para a prática de artes marciais, yoga e alongamento. Ele oferece amortecimento e segurança, protegendo os praticantes de impactos e quedas, e proporcionando uma superfície confortável para exercícios no chão.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Tatami"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'tatami')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'tatami')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('tatami')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-tatami" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Ropes Exercises (Battle Ropes) -->
                 <div class="card" data-name="Ropes Exercises Battle Ropes">
                     <h3 class="item-title">
                         <span class="emoji">〰️</span> Cordas de Batalha (Battle Ropes)
                         <button class="play-audio-btn" onclick="playAudio('Ropes Exercises or Battle Ropes')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Ropes Exercises (Battle Ropes)', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-ropes-exercises-en">High-intensity workouts using thick, heavy ropes to create waves, slams, and other dynamic movements for strength, cardio, and endurance.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-ropes-exercises-en').innerText)">🔊</button>
@@ -987,7 +1250,19 @@
                         <br>
                         <strong>Função:</strong> Treino de força, condicionamento cardiovascular e resistência muscular.
                     </p>
-                    <div id="info-ropes-exercises-battle-ropes" class="detailed-info hidden"></div>
+                    <div id="info-ropes-exercises-battle-ropes" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> As cordas de batalha são equipamentos de treino de alta intensidade que proporcionam um treino de corpo inteiro, combinando força, cardio e resistência. Os exercícios envolvem criar ondas, slams e outros movimentos dinâmicos com as cordas, ativando múltiplos grupos musculares e elevando a frequência cardíaca rapidamente.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Ropes Exercises (Battle Ropes)"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'ropes-exercises-battle-ropes')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'ropes-exercises-battle-ropes')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('ropes-exercises-battle-ropes')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-ropes-exercises-battle-ropes" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1003,7 +1278,6 @@
                     <h3 class="item-title">
                         <span class="emoji">🏋️‍♀️</span> Agachamento (Squat)
                         <button class="play-audio-btn" onclick="playAudio('Squat with Barbell or Smith Machine')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Squat with Barbell or Smith Machine', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-squat-barbell-en">A fundamental strength exercise performed with a barbell on the back or using a Smith Machine, primarily targeting glutes, quads, and hamstrings.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-squat-barbell-en').innerText)">🔊</button>
@@ -1013,14 +1287,25 @@
                         <strong>Equipamento:</strong> Barra com pesos (Barbell) ou Máquina Smith.
                         <strong>Músculos trabalhados:</strong> Glúteos, Quadríceps, Isquiotibiais.
                     </p>
-                    <div id="info-squat-with-barbell-or-smith-machine" class="detailed-info hidden"></div>
+                    <div id="info-squat-with-barbell-or-smith-machine" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O agachamento com barra ou na Máquina Smith é um exercício composto poderoso para construir força e massa muscular nas pernas e glúteos. A barra nas costas (ou guiada na Smith) permite o uso de cargas mais pesadas, exigindo boa técnica e estabilidade do core para execução segura e eficaz.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Squat with Barbell or Smith Machine"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'squat-with-barbell-or-smith-machine')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'squat-with-barbell-or-smith-machine')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('squat-with-barbell-or-smith-machine')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-squat-with-barbell-or-smith-machine" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Leg Press - Máquina Leg Press -->
                 <div class="card" data-name="Leg Press Machine">
                     <h3 class="item-title">
                         <span class="emoji">🦵</span> Leg Press
                         <button class="play-audio-btn" onclick="playAudio('Leg Press Machine')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Leg Press Machine', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-leg-press-machine-en">A machine where you push a platform with your legs, excellent for working leg muscles without requiring much balance, focusing on quads, glutes, and hamstrings.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-leg-press-machine-en').innerText)">🔊</button>
@@ -1030,14 +1315,25 @@
                         <strong>Equipamento:</strong> Máquina Leg Press.
                         <strong>Músculos trabalhados:</strong> Quadríceps, Glúteos, Isquiotibiais.
                     </p>
-                    <div id="info-leg-press-machine" class="detailed-info hidden"></div>
+                    <div id="info-leg-press-machine" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> A Máquina Leg Press é um equipamento popular para treinar as pernas, focando nos quadríceps, glúteos e isquiotibiais. Permite levantar pesos significativos enquanto oferece suporte para as costas, sendo uma ótima alternativa para quem busca um treino intenso de pernas com menor impacto na coluna em comparação com agachamentos livres.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Leg Press Machine"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'leg-press-machine')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'leg-press-machine')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('leg-press-machine')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-leg-press-machine" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Flexão de braço (Push-up) - Peso corporal (Bodyweight) -->
                 <div class="card" data-name="Flexao de braco Push-up Bodyweight">
                     <h3 class="item-title">
                         <span class="emoji">🤸‍♂️</span> Flexão de Braço (Push-up)
                         <button class="play-audio-btn" onclick="playAudio('Push-up Bodyweight')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Push-up Bodyweight', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-push-up-bodyweight-en">A classic bodyweight exercise that strengthens the chest, shoulders, triceps, and core.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-push-up-bodyweight-en').innerText)">🔊</button>
@@ -1047,14 +1343,25 @@
                         <strong>Equipamento:</strong> Peso corporal (Bodyweight).
                         <strong>Músculos trabalhados:</strong> Peito, Ombros (Deltóides), Tríceps, Core.
                     </p>
-                    <div id="info-push-up-bodyweight" class="detailed-info hidden"></div>
+                    <div id="info-push-up-bodyweight" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> A flexão de braço é um exercício fundamental de peso corporal que fortalece o peito, ombros e tríceps. É versátil e pode ser modificada para diferentes níveis de dificuldade, desde flexões de joelhos até variações mais avançadas. É excelente para construir força funcional e resistência muscular na parte superior do corpo.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Push-up Bodyweight"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'push-up-bodyweight')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'push-up-bodyweight')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('push-up-bodyweight')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-push-up-bodyweight" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
-                <!-- Supino (Bench Press) - Banco e barra com pesos (Bench and Barbell) -->
+                <!-- Supino (Bench Press) - Banco e barra com pesos (Barbell) -->
                 <div class="card" data-name="Supino Bench Press Barbell">
                     <h3 class="item-title">
                         <span class="emoji">🏋️</span> Supino (Bench Press)
                         <button class="play-audio-btn" onclick="playAudio('Bench Press with Barbell')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Bench Press with Barbell', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-bench-press-barbell-en">A classic upper body exercise performed lying on a bench, pressing a barbell upwards, targeting chest, shoulders, and triceps.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-bench-press-barbell-en').innerText)">🔊</button>
@@ -1064,14 +1371,25 @@
                         <strong>Equipamento:</strong> Banco e Barra com pesos (Barbell).
                         <strong>Músculos trabalhados:</strong> Peito (Peitoral Maior), Ombros (Deltóides Anteriores), Tríceps.
                     </p>
-                    <div id="info-bench-press-with-barbell" class="detailed-info hidden"></div>
+                    <div id="info-bench-press-with-barbell" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O Supino com barra é um dos exercícios mais eficazes para o desenvolvimento do peito, ombros e tríceps. Realizado deitado em um banco, empurrando uma barra com pesos para cima, é um movimento composto que permite levantar cargas pesadas, sendo um pilar em muitos programas de treino de força.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Bench Press with Barbell"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'bench-press-with-barbell')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'bench-press-with-barbell')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('bench-press-with-barbell')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-bench-press-with-barbell" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Remada curvada com halteres (Bent-over Dumbbell Row) - Halteres (Dumbbells) -->
                 <div class="card" data-name="Remada curvada com halteres Dumbbells">
                     <h3 class="item-title">
                         <span class="emoji">💪</span> Remada Curvada com Halteres
                         <button class="play-audio-btn" onclick="playAudio('Bent-over Dumbbell Row')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Bent-over Dumbbell Row', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-bent-over-dumbbell-row-en">An exercise performed with dumbbells, bending at the waist and pulling the weights towards your torso, effectively working the back and biceps.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-bent-over-dumbbell-row-en').innerText)">🔊</button>
@@ -1081,14 +1399,25 @@
                         <strong>Equipamento:</strong> Halteres (Dumbbells).
                         <strong>Músculos trabalhados:</strong> Costas (Latíssimo do Dorso, Romboides), Bíceps.
                     </p>
-                    <div id="info-bent-over-dumbbell-row" class="detailed-info hidden"></div>
+                    <div id="info-bent-over-dumbbell-row" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> A remada curvada com halteres é um exercício excelente para construir a espessura e a força das costas, além de trabalhar os bíceps. Ao inclinar o tronco para a frente e puxar os halteres em direção ao corpo, foca nos músculos latíssimo do dorso e romboides, contribuindo para uma postura melhor e um tronco mais forte.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Bent-over Dumbbell Row"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'bent-over-dumbbell-row')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'bent-over-dumbbell-row')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('bent-over-dumbbell-row')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-bent-over-dumbbell-row" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Puxada na barra (pulldown) - Máquina Pulldown -->
                 <div class="card" data-name="Puxada na barra Lat Pulldown Machine">
                     <h3 class="item-title">
                         <span class="emoji">⬆️</span> Puxada na Barra (Lat Pulldown)
                         <button class="play-audio-btn" onclick="playAudio('Lat Pulldown Machine')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Lat Pulldown Machine', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-lat-pulldown-machine-en">A machine-based exercise where you pull a bar down towards your chest, primarily targeting the latissimus dorsi muscles of the back and biceps.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-lat-pulldown-machine-en').innerText)">🔊</button>
@@ -1098,14 +1427,25 @@
                         <strong>Equipamento:</strong> Máquina de Puxada (Lat Pulldown Machine).
                         <strong>Músculos trabalhados:</strong> Costas (Latíssimo do Dorso), Bíceps.
                     </p>
-                    <div id="info-lat-pulldown-machine" class="detailed-info hidden"></div>
+                    <div id="info-lat-pulldown-machine" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> A Puxada na Barra é um exercício eficaz para desenvolver a largura das costas, visando principalmente o latíssimo do dorso. Realizado em uma máquina de polia, onde você puxa uma barra para baixo em direção ao peito, é uma ótima alternativa para quem ainda não consegue fazer pull-ups, mas quer fortalecer os músculos das costas.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Lat Pulldown Machine"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'lat-pulldown-machine')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'lat-pulldown-machine')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('lat-pulldown-machine')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-lat-pulldown-machine" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Desenvolvimento de ombro com halteres (Dumbbell Shoulder Press) - Halteres (Dumbbells) -->
                 <div class="card" data-name="Desenvolvimento de ombro com halteres Dumbbells">
                     <h3 class="item-title">
                         <span class="emoji">🏋️‍♂️</span> Desenvolvimento de Ombro com Halteres
                         <button class="play-audio-btn" onclick="playAudio('Dumbbell Shoulder Press')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Dumbbell Shoulder Press', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-dumbbell-shoulder-press-en-2">A strength exercise using dumbbells, pressing them overhead from shoulder height, targeting the deltoids and triceps.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-dumbbell-shoulder-press-en-2').innerText)">🔊</button>
@@ -1115,14 +1455,25 @@
                         <strong>Equipamento:</strong> Halteres (Dumbbells).
                         <strong>Músculos trabalhados:</strong> Ombros (Deltóides), Tríceps.
                     </p>
-                    <div id="info-dumbbell-shoulder-press" class="detailed-info hidden"></div>
+                    <div id="info-dumbbell-shoulder-press" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O desenvolvimento de ombro com halteres é um exercício fundamental para construir ombros fortes e bem desenvolvidos. Ao empurrar os halteres acima da cabeça, trabalha os deltóides (especialmente a porção anterior e medial) e os tríceps, sendo essencial para a força da parte superior do corpo e movimentos de empurrar.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Dumbbell Shoulder Press"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'dumbbell-shoulder-press')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'dumbbell-shoulder-press')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('dumbbell-shoulder-press')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-dumbbell-shoulder-press" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Elevação lateral de ombro (Lateral Raise) - Halteres (Dumbbells) -->
                 <div class="card" data-name="Elevacao lateral de ombro Lateral Raise Dumbbells">
                     <h3 class="item-title">
                         <span class="emoji">↔️</span> Elevação Lateral de Ombro
                         <button class="play-audio-btn" onclick="playAudio('Lateral Raise')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Lateral Raise', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-lateral-raise-en">An isolation exercise using dumbbells, raising them out to the sides until arms are parallel to the floor, specifically targeting the side deltoids.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-lateral-raise-en').innerText)">🔊</button>
@@ -1132,14 +1483,25 @@
                         <strong>Equipamento:</strong> Halteres (Dumbbells).
                         <strong>Músculos trabalhados:</strong> Ombros (Deltóides Laterais).
                     </p>
-                    <div id="info-lateral-raise" class="detailed-info hidden"></div>
+                    <div id="info-lateral-raise" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> A elevação lateral é um exercício de isolamento que foca especificamente na porção medial dos deltóides, responsável pela largura dos ombros. Realizada levantando halteres para os lados, com os braços estendidos ou ligeiramente flexionados, é crucial para um desenvolvimento equilibrado dos ombros.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Lateral Raise"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'lateral-raise')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'lateral-raise')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('lateral-raise')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-lateral-raise" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Extensão de tríceps na polia (Triceps Pushdown) - Máquina de polia (Cable Machine) -->
                 <div class="card" data-name="Extensao de triceps na polia Triceps Pushdown Cable Machine">
                     <h3 class="item-title">
                         <span class="emoji">⬇️</span> Extensão de Tríceps na Polia
                         <button class="play-audio-btn" onclick="playAudio('Triceps Pushdown')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Triceps Pushdown', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-triceps-pushdown-en">An exercise performed on a cable machine, pushing a bar or rope downwards to extend the arms, effectively isolating the triceps.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-triceps-pushdown-en').innerText)">🔊</button>
@@ -1149,14 +1511,25 @@
                         <strong>Equipamento:</strong> Máquina de Polia (Cable Machine).
                         <strong>Músculos trabalhados:</strong> Tríceps.
                     </p>
-                    <div id="info-triceps-pushdown" class="detailed-info hidden"></div>
+                    <div id="info-triceps-pushdown" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> A extensão de tríceps na polia é um exercício eficaz para isolar e fortalecer os tríceps. Usando uma máquina de cabos, você empurra uma barra ou corda para baixo, estendendo os braços. É excelente para esculpir a parte de trás dos braços e aumentar a força de empurrar.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Triceps Pushdown"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'triceps-pushdown')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'triceps-pushdown')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('triceps-pushdown')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-triceps-pushdown" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Rosca direta com barra (Barbell Bicep Curl) - Barra com pesos (Barbell) -->
                 <div class="card" data-name="Rosca direta com barra Barbell Bicep Curl">
                     <h3 class="item-title">
                         <span class="emoji">💪</span> Rosca Direta com Barra
                         <button class="play-audio-btn" onclick="playAudio('Barbell Bicep Curl')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Barbell Bicep Curl', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-barbell-bicep-curl-en">A classic arm exercise performed with a barbell, curling it upwards towards the chest, primarily targeting the biceps.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-barbell-bicep-curl-en').innerText)">🔊</button>
@@ -1166,14 +1539,25 @@
                         <strong>Equipamento:</strong> Barra com pesos (Barbell).
                         <strong>Músculos trabalhados:</strong> Bíceps.
                     </p>
-                    <div id="info-barbell-bicep-curl" class="detailed-info hidden"></div>
+                    <div id="info-barbell-bicep-curl" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> A rosca direta com barra é um dos exercícios mais populares para construir massa e força nos bíceps. Ao curvar uma barra com pesos para cima em direção ao peito, isola os músculos do bíceps, sendo um exercício fundamental para o desenvolvimento dos braços.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Barbell Bicep Curl"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'barbell-bicep-curl')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'barbell-bicep-curl')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('barbell-bicep-curl')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-barbell-bicep-curl" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Abdominal crunch (Crunch) - Peso corporal ou bola suíça (Swiss Ball) -->
                 <div class="card" data-name="Abdominal crunch Crunch Bodyweight Swiss Ball">
                     <h3 class="item-title">
                         <span class="emoji">💥</span> Abdominal Crunch
-                        <button class="play-audio-btn" onclick="playAudio('Abdominal Crunch')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 : 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Abdominal Crunch', this)">✨ Obter Detalhes ✨</button>
+                        <button class="play-audio-btn" onclick="playAudio('Abdominal Crunch')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
                     </h3>
                     <p class="description">
                         <span id="desc-abdominal-crunch-en">A common core exercise performed lying on your back, lifting your shoulders off the floor, or using a Swiss Ball for added range of motion.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-abdominal-crunch-en').innerText)">🔊</button>
@@ -1183,14 +1567,25 @@
                         <strong>Equipamento:</strong> Peso corporal (Bodyweight) ou Bola Suíça (Swiss Ball).
                         <strong>Músculos trabalhados:</strong> Abdômen (Reto Abdominal, Oblíquos).
                     </p>
-                    <div id="info-abdominal-crunch" class="detailed-info hidden"></div>
+                    <div id="info-abdominal-crunch" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O abdominal crunch é um exercício clássico para fortalecer os músculos abdominais. Pode ser feito com peso corporal, levantando os ombros do chão, ou em uma bola suíça para aumentar a amplitude de movimento e ativar mais estabilizadores. É fundamental para a força do core e a estabilidade da coluna.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Abdominal Crunch"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'abdominal-crunch')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'abdominal-crunch')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('abdominal-crunch')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-abdominal-crunch" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Stiff (Romanian Deadlift) - Barra com pesos (Barbell) -->
                 <div class="card" data-name="Stiff Romanian Deadlift Barbell">
                     <h3 class="item-title">
                         <span class="emoji">🏋️‍♀️</span> Stiff (Romanian Deadlift)
                         <button class="play-audio-btn" onclick="playAudio('Romanian Deadlift')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Romanian Deadlift', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-romanian-deadlift-en">A variation of the deadlift performed with a barbell, focusing on the hamstrings, glutes, and lower back by hinging at the hips.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-romanian-deadlift-en').innerText)">🔊</button>
@@ -1200,14 +1595,25 @@
                         <strong>Equipamento:</strong> Barra com pesos (Barbell).
                         <strong>Músculos trabalhados:</strong> Isquiotibiais, Glúteos, Lombar.
                     </p>
-                    <div id="info-romanian-deadlift" class="detailed-info hidden"></div>
+                    <div id="info-romanian-deadlift" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O Stiff, ou Levantamento Terra Romeno, é um exercício que foca intensamente nos isquiotibiais (posteriores da coxa) e glúteos, além de fortalecer a lombar. Realizado com uma barra, envolve uma flexão no quadril, mantendo as pernas quase retas, para alongar e contrair os músculos posteriores da coxa.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Romanian Deadlift"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'romanian-deadlift')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'romanian-deadlift')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('romanian-deadlift')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-romanian-deadlift" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Elevação de panturrilha na máquina (Calf Raise Machine) - Máquina de panturrilha (Calf Raise Machine) -->
                 <div class="card" data-name="Elevacao de panturrilha Calf Raise Machine">
                     <h3 class="item-title">
                         <span class="emoji">🦵</span> Elevação de Panturrilha na Máquina
                         <button class="play-audio-btn" onclick="playAudio('Calf Raise Machine')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Calf Raise Machine', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-calf-raise-machine-en">A machine-specific exercise for strengthening the calf muscles by pushing up on the balls of your feet.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-calf-raise-machine-en').innerText)">🔊</button>
@@ -1217,14 +1623,25 @@
                         <strong>Equipamento:</strong> Máquina de Panturrilha (Calf Raise Machine).
                         <strong>Músculos trabalhados:</strong> Panturrilhas (Gastrocnêmio, Sóleo).
                     </p>
-                    <div id="info-calf-raise-machine" class="detailed-info hidden"></div>
+                    <div id="info-calf-raise-machine" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> A elevação de panturrilha na máquina é um exercício isolado que visa fortalecer os músculos da panturrilha (gastrocnêmio e sóleo). Ao empurrar para cima nas pontas dos pés, com peso, é eficaz para desenvolver a massa muscular e a resistência na parte inferior das pernas.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Calf Raise Machine"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'calf-raise-machine')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'calf-raise-machine')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('calf-raise-machine')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-calf-raise-machine" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Treadmill -->
                 <div class="card" data-name="Treadmill">
                     <h3 class="item-title">
                         <span class="emoji">🏃‍♀️</span> Esteira
                         <button class="play-audio-btn" onclick="playAudio('Treadmill')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Treadmill', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-treadmill-en">A device used for walking or running indoors, with a moving belt driven by a motor or by the user's feet, offering a versatile cardio workout.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-treadmill-en').innerText)">🔊</button>
@@ -1234,14 +1651,25 @@
                         <strong>Equipamento:</strong> Máquina (Cardio).
                         <strong>Músculos trabalhados:</strong> Pernas, Glúteos, Core (estabilização).
                     </p>
-                    <div id="info-treadmill" class="detailed-info hidden"></div>
+                    <div id="info-treadmill" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> A esteira é um equipamento de cardio versátil que permite caminhar, correr ou simular subidas em um ambiente controlado. É excelente para melhorar a saúde cardiovascular, queimar calorias e fortalecer as pernas. Oferece a flexibilidade de ajustar a velocidade e a inclinação para diferentes intensidades de treino.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Treadmill"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'treadmill')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'treadmill')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('treadmill')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-treadmill" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Elliptical -->
                 <div class="card" data-name="Elliptical Trainer">
                     <h3 class="item-title">
                         <span class="emoji">🏃‍♀️</span> Elíptico
                         <button class="play-audio-btn" onclick="playAudio('Elliptical Trainer')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Elliptical Trainer', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-elliptical-trainer-en">A stationary exercise machine used to simulate stair climbing, walking, or running without causing excessive pressure to the joints, providing a full-body cardio workout.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-elliptical-trainer-en').innerText)">🔊</button>
@@ -1251,14 +1679,25 @@
                         <strong>Equipamento:</strong> Máquina (Cardio).
                         <strong>Músculos trabalhados:</strong> Pernas, Glúteos, Ombros, Braços (corpo inteiro).
                     </p>
-                    <div id="info-elliptical-trainer" class="detailed-info hidden"></div>
+                    <div id="info-elliptical-trainer" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> O elíptico é uma máquina de cardio de baixo impacto que simula movimentos de corrida, caminhada e subida de escadas. Proporciona um treino de corpo inteiro, pois envolve tanto as pernas quanto os braços. É ideal para quem busca um exercício cardiovascular eficaz que seja gentil com as articulações.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Elliptical Trainer"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'elliptical-trainer')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'elliptical-trainer')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('elliptical-trainer')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-elliptical-trainer" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Stationary Bike -->
                 <div class="card" data-name="Stationary Bike">
                     <h3 class="item-title">
                         <span class="emoji">🚴</span> Bicicleta Ergométrica
                         <button class="play-audio-btn" onclick="playAudio('Stationary Bike')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Stationary Bike', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-stationary-bike-en">A piece of exercise equipment that simulates cycling, used for cardiovascular fitness and strengthening leg muscles with low impact.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-stationary-bike-en').innerText)">🔊</button>
@@ -1268,14 +1707,25 @@
                         <strong>Equipamento:</strong> Máquina (Cardio).
                         <strong>Músculos trabalhados:</strong> Quadríceps, Isquiotibiais, Glúteos, Panturrilhas.
                     </p>
-                    <div id="info-stationary-bike" class="detailed-info hidden"></div>
+                    <div id="info-stationary-bike" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> A bicicleta ergométrica é um equipamento de cardio popular que simula o ciclismo, oferecendo um treino de baixo impacto para as pernas e o sistema cardiovascular. É excelente para melhorar a resistência, queimar calorias e fortalecer os músculos das pernas, sendo uma opção confortável para treinos de longa duração.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Stationary Bike"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'stationary-bike')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'stationary-bike')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('stationary-bike')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-stationary-bike" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Dumbbells -->
                 <div class="card" data-name="Dumbbells">
                     <h3 class="item-title">
                         <span class="emoji">🏋️‍♂️</span> Halteres
                         <button class="play-audio-btn" onclick="playAudio('Dumbbells')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Dumbbells', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-dumbbells-en">Short bars with weights at each end, used for a wide variety of strength training exercises, offering versatility and promoting stability.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-dumbbells-en').innerText)">🔊</button>
@@ -1285,14 +1735,25 @@
                         <strong>Equipamento:</strong> Peso livre (Free weight).
                         <strong>Músculos trabalhados:</strong> Todos os grupos musculares, dependendo do exercício.
                     </p>
-                    <div id="info-dumbbells" class="detailed-info hidden"></div>
+                    <div id="info-dumbbells" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> Halteres são pesos livres versáteis que permitem uma vasta gama de exercícios de força para todos os grupos musculares. Promovem a estabilidade e o equilíbrio, pois cada lado do corpo trabalha independentemente. São ideais para treinos de força, hipertrofia e reabilitação.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Dumbbells"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'dumbbells')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'dumbbells')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('dumbbells')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-dumbbells" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
                 <!-- Cable Machine -->
                 <div class="card" data-name="Cable Machine">
                     <h3 class="item-title">
                         <span class="emoji">🔗</span> Máquina de Cabos (Cable Machine)
                         <button class="play-audio-btn" onclick="playAudio('Cable Machine')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.534 5.334a.834.834 0 0 0-1.178 0L8 7.69 5.644 5.334a.834.834 0 0 0-1.178 1.178L6.822 8 4.466 10.356a.834.834 0 0 0 1.178 1.178L8 9.17l2.356 2.356a.834.834 0 0 0 1.178-1.178L9.178 8l2.356-2.356a.834.834 0 0 0 0-1.178z"/><path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>Play</button>
-                        <button class="gemini-info-btn" onclick="getDetailedInfo('Cable Machine', this)">✨ Obter Detalhes ✨</button>
                     </h3>
                     <p class="description">
                         <span id="desc-cable-machine-en">A versatile piece of gym equipment that uses cables and pulleys to provide constant resistance for a wide range of exercises, from triceps pushdowns to cable rows.</span> <button class="play-audio-btn" onclick="playAudio(document.getElementById('desc-cable-machine-en').innerText)">🔊</button>
@@ -1302,7 +1763,19 @@
                         <strong>Equipamento:</strong> Máquina (Máquina de Polia).
                         <strong>Músculos trabalhados:</strong> Todos os grupos musculares, dependendo do exercício.
                     </p>
-                    <div id="info-cable-machine" class="detailed-info hidden"></div>
+                    <div id="info-cable-machine" class="detailed-info">
+                        <strong>Informações Detalhadas:</strong> A Máquina de Cabos, ou polia, é um equipamento extremamente versátil que oferece resistência constante em diversas direções. Permite realizar uma infinidade de exercícios para todos os grupos musculares, desde puxadas e empurradas até rotações, sendo ótima para treinos funcionais e de isolamento.
+                        <div class="pronunciation-practice">
+                            <h4>Prática de Pronúncia para "Cable Machine"</h4>
+                            <div class="record-controls">
+                                <button class="record-btn" onclick="startRecordingGym(this, 'cable-machine')">Iniciar Gravação 🎤</button>
+                                <button class="record-btn" onclick="stopRecordingGym(this, 'cable-machine')" disabled>Parar Gravação ⏹️</button>
+                                <button class="record-btn" onclick="playRecordedAudioGym('cable-machine')" disabled>Reproduzir Sua Gravação ▶️</button>
+                            </div>
+                            <div id="recording-status-gym-cable-machine" class="status-message"></div>
+                        </div>
+                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
+                    </div>
                 </div>
             </div>
             <div class="info-box mt-8">
@@ -1424,8 +1897,8 @@
                     </div>
 
                     <div class="flex flex-wrap gap-2 mt-6">
-                        <button class="btn flex-1 min-w-[150px]" onclick="getGeminiInfo('bodyPart')">✨ Obter Info da Parte do Corpo (IA) ✨</button>
-                        <button class="btn flex-1 min-w-[150px]" onclick="getGeminiInfo('painType')">✨ Obter Info do Tipo de Dor (IA) ✨</button>
+                        <button class="btn flex-1 min-w-[150px]" onclick="getGeminiInfoActivity('bodyPart')">✨ Obter Info da Parte do Corpo (IA) ✨</button>
+                        <button class="btn flex-1 min-w-[150px]" onclick="getGeminiInfoActivity('painType')">✨ Obter Info do Tipo de Dor (IA) ✨</button>
                     </div>
                     <div id="ai-info-display-activity" class="detailed-ai-info hidden mt-4"></div>
 
@@ -1482,39 +1955,38 @@
 
         /**
          * Normalizes a string to be used as a valid HTML ID.
+         * Converts to lowercase, replaces spaces with hyphens, and removes
+         * any characters that are not alphanumeric or hyphens.
          * @param {string} str - The input string.
          * @returns {string} - The normalized ID.
          */
         function normalizeId(str) {
-            // Remove special characters, replace spaces with hyphens, convert to lowercase
-            return str.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-');
+            return str.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
         }
 
+        // Renamed getDetailedInfo to getGeminiInfoActivity to clarify its scope
         /**
          * Generates and displays detailed information about a gym item using the Gemini API.
-         * @param {string} itemName - The name of the item (e.g., "Squash", "Treadmill").
-         * @param {HTMLElement} clickedButton - The button that was clicked to trigger this function.
+         * This function is now specifically for the "Human Body & Pain Types Activity" section.
+         * @param {string} type - 'bodyPart' or 'painType'.
          */
-        async function getDetailedInfo(itemName, clickedButton) {
-            const itemId = normalizeId(itemName);
-            const infoDiv = document.getElementById(`info-${itemId}`);
+        async function getGeminiInfoActivity(type) {
+            aiInfoDisplayActivity.classList.remove('hidden');
+            aiInfoDisplayActivity.innerHTML = '<div class="loading-spinner"></div> Carregando informações...';
 
-            if (!infoDiv) {
-                console.error(`Could not find info div for item: ${itemName}. Expected ID: info-${itemId}`);
+            let prompt = '';
+            if (type === 'bodyPart' && selectedBodyPartIdActivity) {
+                const nameEn = bodyPartsActivity[selectedBodyPartIdActivity].en;
+                prompt = `Provide a concise explanation of the human body part "${nameEn}", its main function, and 2-3 common types of pain associated with it.`;
+            } else if (type === 'painType' && painTypeSelectActivity.value) {
+                const selectedPain = painTypeSelectActivity.value;
+                prompt = `Describe the sensation of "${selectedPain}" pain and provide 1-2 common causes or conditions that might lead to it.`;
+            } else {
+                aiInfoDisplayActivity.innerHTML = 'Por favor, selecione uma parte do corpo ou tipo de dor primeiro para obter informações da IA.';
                 return;
             }
-
-            // Toggle visibility
-            if (!infoDiv.classList.contains('hidden') && infoDiv.innerHTML.includes('Informações Detalhadas:')) {
-                infoDiv.classList.add('hidden');
-                return;
-            }
-
-            infoDiv.classList.remove('hidden'); // Show the info div
-            infoDiv.innerHTML = '<div class="loading-spinner"></div> Carregando informações detalhadas...';
 
             try {
-                const prompt = `Provide a detailed explanation of ${itemName}, including its benefits and how it's typically performed. Keep the explanation concise, around 3-5 sentences.`;
                 let chatHistory = [];
                 chatHistory.push({ role: "user", parts: [{ text: prompt }] });
 
@@ -1528,31 +2000,23 @@
                     body: JSON.stringify(payload)
                 });
 
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
                 const result = await response.json();
 
                 if (result.candidates && result.candidates.length > 0 &&
                     result.candidates[0].content && result.candidates[0].content.parts &&
                     result.candidates[0].content.parts.length > 0) {
                     const text = result.candidates[0].content.parts[0].text;
-                    infoDiv.innerHTML = `
-                        <strong>Informações Detalhadas:</strong> ${text}
-                        <div class="pronunciation-practice">
-                            <h4>Prática de Pronúncia para "${itemName}"</h4>
-                            <div class="record-controls">
-                                <button class="record-btn" onclick="startRecordingGym(this, '${itemId}')">Iniciar Gravação 🎤</button>
-                                <button class="record-btn" onclick="stopRecordingGym(this, '${itemId}')" disabled>Parar Gravação ⏹️</button>
-                                <button class="record-btn" onclick="playRecordedAudioGym('${itemId}')" disabled>Reproduzir Sua Gravação ▶️</button>
-                            </div>
-                            <div id="recording-status-gym-${itemId}" class="status-message"></div>
-                        </div>
-                        <button class="mark-learned-btn mt-4" onclick="markAsLearned(this)">Marcar como Aprendido ✅</button>
-                    `;
+                    aiInfoDisplayActivity.innerHTML = `<strong>Informações da IA:</strong> ${text}`;
                 } else {
-                    infoDiv.innerHTML = 'Falha ao recuperar informações detalhadas. Por favor, tente novamente.';
+                    aiInfoDisplayActivity.innerHTML = 'Falha ao recuperar informações da IA. Resposta da API inesperada.';
                     console.error('Gemini API response structure unexpected:', result);
                 }
             } catch (error) {
-                infoDiv.innerHTML = 'Ocorreu um erro ao buscar informações. Por favor, verifique sua conexão de rede.';
+                aiInfoDisplayActivity.innerHTML = `Ocorreu um erro ao buscar informações da IA. Por favor, verifique sua conexão de rede ou tente novamente mais tarde. Detalhes: ${error.message}`;
                 console.error('Error calling Gemini API:', error);
             }
         }
@@ -1581,15 +2045,21 @@
                 mediaRecorderGym.onstop = () => {
                     recordedAudioBlobGym = new Blob(audioChunksGym, { type: 'audio/webm' });
                     currentRecordingStatusDivGym.innerText = 'Gravação parada. Pronto para reproduzir.';
-                    document.querySelector(`#info-${itemId} .record-btn:nth-of-type(3)`).disabled = false; // Enable play button
+                    // Enable the play button for this specific item
+                    const playBtn = document.querySelector(`#info-${itemId} .record-controls .record-btn:nth-of-type(3)`);
+                    if (playBtn) playBtn.disabled = false;
                     stream.getTracks().forEach(track => track.stop()); // Stop microphone access
                 };
 
                 mediaRecorderGym.start();
                 currentRecordingStatusDivGym.innerText = 'Gravando... Diga algo!';
                 button.disabled = true;
-                document.querySelector(`#info-${itemId} .record-btn:nth-of-type(2)`).disabled = false; // Enable stop button
-                document.querySelector(`#info-${itemId} .record-btn:nth-of-type(3)`).disabled = true; // Disable play button
+                // Enable the stop button for this specific item
+                const stopBtn = document.querySelector(`#info-${itemId} .record-controls .record-btn:nth-of-type(2)`);
+                if (stopBtn) stopBtn.disabled = false;
+                // Disable the play button until recording is stopped
+                const playBtn = document.querySelector(`#info-${itemId} .record-controls .record-btn:nth-of-type(3)`);
+                if (playBtn) playBtn.disabled = true;
             } catch (err) {
                 currentRecordingStatusDivGym.innerText = 'Acesso ao microfone negado ou ocorreu um erro.';
                 console.error('Error accessing microphone:', err);
@@ -1605,7 +2075,9 @@
             if (mediaRecorderGym && mediaRecorderGym.state === 'recording') {
                 mediaRecorderGym.stop();
                 button.disabled = true;
-                document.querySelector(`#info-${itemId} .record-btn:nth-of-type(1)`).disabled = false; // Enable start button
+                // Enable the start button for this specific item
+                const startBtn = document.querySelector(`#info-${itemId} .record-controls .record-btn:nth-of-type(1)`);
+                if (startBtn) startBtn.disabled = false;
             }
         }
 
@@ -1654,9 +2126,10 @@
                 const portugueseDescription = card.querySelector('.description strong:nth-of-type(2)')?.nextSibling?.textContent.toLowerCase() || '';
                 const musclesWorked = card.querySelector('.description strong:nth-of-type(3)')?.nextSibling?.textContent.toLowerCase() || '';
                 const equipmentUsed = card.querySelector('.description strong:nth-of-type(4)')?.nextSibling?.textContent.toLowerCase() || '';
+                const detailedInfoText = card.querySelector('.detailed-info')?.innerText.toLowerCase() || '';
 
 
-                if (cardName.includes(searchTerm) || englishDescription.includes(searchTerm) || portugueseDescription.includes(searchTerm) || musclesWorked.includes(searchTerm) || equipmentUsed.includes(searchTerm)) {
+                if (cardName.includes(searchTerm) || englishDescription.includes(searchTerm) || portugueseDescription.includes(searchTerm) || musclesWorked.includes(searchTerm) || equipmentUsed.includes(searchTerm) || detailedInfoText.includes(searchTerm)) {
                     card.style.display = 'flex'; // Show card
                 } else {
                     card.style.display = 'none'; // Hide card
@@ -1937,57 +2410,6 @@
             playRecordedAudioBtnActivity.disabled = true;
             recordingStatusActivity.innerText = '';
             recordedAudioBlobActivity = null;
-        }
-
-        /**
-         * Calls the Gemini API to get detailed information.
-         * @param {string} type - 'bodyPart' or 'painType'.
-         */
-        async function getGeminiInfo(type) {
-            aiInfoDisplayActivity.classList.remove('hidden');
-            aiInfoDisplayActivity.innerHTML = '<div class="loading-spinner"></div> Carregando informações...';
-
-            let prompt = '';
-            if (type === 'bodyPart' && selectedBodyPartIdActivity) {
-                const nameEn = bodyPartsActivity[selectedBodyPartIdActivity].en;
-                prompt = `Provide a concise explanation of the human body part "${nameEn}", its main function, and 2-3 common types of pain associated with it.`;
-            } else if (type === 'painType' && painTypeSelectActivity.value) {
-                const selectedPain = painTypeSelectActivity.value;
-                prompt = `Describe the sensation of "${selectedPain}" pain and provide 1-2 common causes or conditions that might lead to it.`;
-            } else {
-                aiInfoDisplayActivity.innerHTML = 'Por favor, selecione uma parte do corpo ou tipo de dor primeiro para obter informações da IA.';
-                return;
-            }
-
-            try {
-                let chatHistory = [];
-                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-
-                const payload = { contents: chatHistory };
-                const apiKey = ""; // Canvas will automatically provide this in runtime
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                const result = await response.json();
-
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    const text = result.candidates[0].content.parts[0].text;
-                    aiInfoDisplayActivity.innerHTML = `<strong>Informações da IA:</strong> ${text}`;
-                } else {
-                    aiInfoDisplayActivity.innerHTML = 'Falha ao recuperar informações da IA. Por favor, tente novamente.';
-                    console.error('Gemini API response structure unexpected:', result);
-                }
-            } catch (error) {
-                aiInfoDisplayActivity.innerHTML = 'Ocorreu um erro ao buscar informações da IA. Por favor, verifique sua conexão de rede.';
-                console.error('Error calling Gemini API:', error);
-            }
         }
 
         /**
